@@ -7,40 +7,10 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Galactica "
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.17" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="209dp"
-        android:layout_height="159dp"
-        app:srcCompat="@android:drawable/btn_star_big_on"
-        tools:layout_editor_absoluteX="88dp"
-        tools:layout_editor_absoluteY="155dp" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="146dp"
-        android:layout_marginBottom="280dp"
-        android:text="Hello!!!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="HILL TEST"
-        tools:layout_editor_absoluteX="146dp"
-        tools:layout_editor_absoluteY="498dp" />
-
+        android:text="@string/app_name"
+        tools:layout_editor_absoluteX="176dp"
+        tools:layout_editor_absoluteY="115dp" />
 </android.support.constraint.ConstraintLayout>
