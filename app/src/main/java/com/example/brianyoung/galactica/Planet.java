@@ -28,7 +28,7 @@ public class Planet {
         planets.add(new Planet("Uranus"));
         planets.add(new Planet("Venus"));
         planets.add(new Planet("Mercury"));
-        planets.add(new Planet("Sun"));
+        planets.add(new Planet("Pluto"));
         return planets;
     }
 
