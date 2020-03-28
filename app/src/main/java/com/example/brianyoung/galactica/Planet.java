@@ -19,14 +19,7 @@ public class Planet {
     }
 
     //create method that would go get you one planet.
-    public static Planet getPlanet(String name){
-        for(Planet planet : getPlanets()){
-            if (planet.getName().equals(name)){
-                return planet;
-            }
-        }
-        return null;
-    }
+
 
     public static ArrayList<Planet> getPlanets(){
         ArrayList<Planet> planets = new ArrayList<>();

@@ -54,7 +54,9 @@ public class MainActivityAdapter extends RecyclerView.Adapter<MainActivityAdapte
     public void onBindViewHolder(MainActivityViewHolder holder, int position) {
         Planet planet = mPlanets.get(position);
         holder.planetName.setText(planet.getName());
-        //holder.planetPic.setImageResource();
+        
+        int picture = holder.itemView.getContext().getResources().getIdentifier("pic_" + planet.getPicture(),"drawable","com.example.brianyoung.galactica");
+        holder.planetPic.setImageResource(picture);
     }
 
     // Return the size of your dataset (invoked by the layout manager)
