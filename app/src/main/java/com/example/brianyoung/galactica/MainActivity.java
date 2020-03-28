@@ -21,23 +21,23 @@ public class MainActivity extends AppCompatActivity {
         //setting the recycler view for the restaurants list
         mainActivityView = findViewById(R.id.mainActivityView);
         mainActivityView.setHasFixedSize(true);
-        mLayoutManager = new GridLayoutManager(this,3);
+        mLayoutManager = new GridLayoutManager(this, 3);
         mainActivityView.setLayoutManager(mLayoutManager);
         MainActivityAdapter.RecyclerViewClickListener listener = new MainActivityAdapter.RecyclerViewClickListener() {
             @Override
             public void onClick(View view, int position) {
-                launchDetailActivity(position);
+                Planet planet = Planet.getPlanets().get(position);
+
+                Bundle bundle = new Bundle();
+                bundle.putString(PlanetHome.ARG_PLANET_NAME, planet.getName());
+
+                Intent intent = new Intent(MainActivity.this, MainActivityAddition.class);
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
         };
 
-        mAdapter = new MainActivityAdapter(Planet.getPlanets(),listener);
+        mAdapter = new MainActivityAdapter(Planet.getPlanets(), listener);
         mainActivityView.setAdapter(mAdapter);
-
-    }
-
-    private void launchDetailActivity(int position) {
-        Intent intent = new Intent(this, PlanetHome.class);
-        intent.putExtra(MESSAGE, position);
-        startActivity(intent);
     }
 }

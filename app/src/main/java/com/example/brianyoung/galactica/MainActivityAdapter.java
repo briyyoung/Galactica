@@ -1,5 +1,6 @@
 package com.example.brianyoung.galactica;
 
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,7 +24,7 @@ public class MainActivityAdapter extends RecyclerView.Adapter<MainActivityAdapte
         void onClick(View view, int position);
     }
 
-    public static class MainActivityViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class MainActivityViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public TextView planetName;
         public ImageView planetPic;
         private RecyclerViewClickListener mListener;
@@ -44,14 +45,15 @@ public class MainActivityAdapter extends RecyclerView.Adapter<MainActivityAdapte
         }
     }
 
+    @NonNull
     @Override
-    public MainActivityAdapter.MainActivityViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public MainActivityAdapter.MainActivityViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_main_adapter, parent, false);
         return new MainActivityViewHolder(v, mListener);
     }
 
     @Override
-    public void onBindViewHolder(MainActivityViewHolder holder, int position) {
+    public void onBindViewHolder(MainActivityAdapter.MainActivityViewHolder holder, int position) {
         Planet planet = mPlanets.get(position);
         holder.planetName.setText(planet.getName());
 

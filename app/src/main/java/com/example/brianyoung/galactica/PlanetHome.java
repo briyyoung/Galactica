@@ -2,6 +2,9 @@ package com.example.brianyoung.galactica;
 
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -11,17 +14,18 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 
 public class PlanetHome extends Fragment {
 
-    private static final String ARG_PLANET_NAME = "param1";
+    public static final String ARG_PLANET_NAME = "Setting what planet we are clicking";
 
     // TODO: Rename and change types of parameters
     private Planet planet;
     private Button btnShowVideo, btnMoreInfo;
     private ImageView clickableImage;
     private TextView planetName;
-
 
     public PlanetHome() {
         // Required empty public constructor
@@ -33,7 +37,7 @@ public class PlanetHome extends Fragment {
         super.onCreate(savedInstanceState);
 
         //get arguments from activity
-        if(getArguments().containsKey(ARG_PLANET_NAME)){ //receiving the bundle arguments from the activity this fragment is associated with
+        if(getArguments().containsKey(ARG_PLANET_NAME)){
             planet = Planet.getPlanet(getArguments().getString(ARG_PLANET_NAME));
             this.getActivity().setTitle(planet.getName());
         }
@@ -45,34 +49,30 @@ public class PlanetHome extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_planet_home, container, false);
 
-        //TODO: Initialise the fragment's UI elements by finding them in the fragment layout
-        btnShowVideo = v.findViewById(R.id.btnShowVideo);
+        //set the planet's name
         planetName = v.findViewById(R.id.planetName);
-        btnMoreInfo = v.findViewById(R.id.btnMoreInfo);
-        clickableImage = v.findViewById(R.id.clickableImage);
+        planetName.setText(planet.getName());
 
-        //TODO: Display the details of the selected City using the fragment's UI elements
-        btnShowVideo.setOnClickListener(new View.OnClickListener(){
+        //set the planet's picture
+        clickableImage = v.findViewById(R.id.clickableImage);
+        int picture = getResources().getIdentifier("pic_" + planet.getPicture(),"drawable","com.example.brianyoung.galactica");
+        clickableImage.setImageResource(picture);
+
+        //set the more info button
+        btnMoreInfo = v.findViewById(R.id.btnMoreInfo);
+
+        //set the show video button
+        btnShowVideo = v.findViewById(R.id.btnShowVideo);
+        btnShowVideo.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
                 //Intent code to go to activity 3
 
 
-
             }
         });
 
-
-
         return v;
     }
-
-    //method to go to activity 3 (show video)
-//    public void launchShowVideo(Planet planet, int position){
-//        Intent intent = new Intent(this, //activity3.class);
-//        intent.putExtra()
-//
-//    }
-
 }
