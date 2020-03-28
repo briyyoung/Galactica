@@ -4,4 +4,8 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="btnShowVideo">Show video!</string>
+    <string name="btnMoreInfo">More</string>
+    <string name="btnBack">Back</string>
+    <string name="btnShowVideo">Show video!</string>
 </resources>

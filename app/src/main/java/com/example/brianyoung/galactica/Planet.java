@@ -18,6 +18,9 @@ public class Planet {
         this.name = name;
     }
 
+    //create method that would go get you one planet.
+
+
     public static ArrayList<Planet> getPlanets(){
         ArrayList<Planet> planets = new ArrayList<>();
         planets.add(new Planet("Mercury"));
