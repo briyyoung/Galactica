@@ -7,6 +7,8 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
     public static final String MESSAGE = "This is from MainActivity";
     private RecyclerView mainActivityView;
@@ -29,9 +31,9 @@ public class MainActivity extends AppCompatActivity {
                 Planet planet = Planet.getPlanets().get(position);
 
                 Bundle bundle = new Bundle();
-                bundle.putString(PlanetHome.ARG_PLANET_NAME, planet.getName());
+                bundle.putString(PlanetHomeFragment.ARG_PLANET_NAME, planet.getName());
 
-                Intent intent = new Intent(MainActivity.this, MainActivityAddition.class);
+                Intent intent = new Intent(MainActivity.this, PlanetHomeEntry.class);
                 intent.putExtras(bundle);
                 startActivity(intent);
             }

@@ -1,12 +1,11 @@
 package com.example.brianyoung.galactica;
 
-
+import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,10 +13,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-
-
-public class PlanetHome extends Fragment {
+public class PlanetHomeFragment extends Fragment {
 
     public static final String ARG_PLANET_NAME = "Setting what planet we are clicking";
 
@@ -26,11 +22,35 @@ public class PlanetHome extends Fragment {
     private Button btnShowVideo, btnMoreInfo;
     private ImageView clickableImage;
     private TextView planetName;
+    private boolean mTwoPane;
+    private View.OnClickListener moreInfoListener = new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        Planet planet = (Planet) view.getTag();
+        if(mTwoPane) {
+            //Intent code to go to PlanetDetailFragment
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            PlanetDetailFragment detailFragment = new PlanetDetailFragment();
 
-    public PlanetHome() {
-        // Required empty public constructor
+            //Using Bundle to send data
+            Bundle bundle = new Bundle();
+            bundle.putString(PlanetHomeFragment.ARG_PLANET_NAME, planet.getName());
+            detailFragment.setArguments(bundle);
+            fragmentTransaction.replace(R.id.detail_container, detailFragment);
+            fragmentTransaction.commit();
+        } else {
+            Context context = view.getContext();
+            Intent intent = new Intent(context, PlanetDetailContainer.class);
+            intent.putExtra(PlanetHomeFragment.ARG_PLANET_NAME, planet.getName());
+            context.startActivity(intent);
+            }
+        }
+    };
+
+    public PlanetHomeFragment() {
+
     }
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -60,6 +80,8 @@ public class PlanetHome extends Fragment {
 
         //set the more info button
         btnMoreInfo = v.findViewById(R.id.btnMoreInfo);
+        btnMoreInfo.setTag(planet);
+        btnMoreInfo.setOnClickListener(moreInfoListener);
 
         //set the show video button
         btnShowVideo = v.findViewById(R.id.btnShowVideo);
@@ -67,7 +89,7 @@ public class PlanetHome extends Fragment {
 
             @Override
             public void onClick(View view) {
-                //Intent code to go to activity 3
+                //Intent code to go to PlanetVideoFragment
 
 
             }
