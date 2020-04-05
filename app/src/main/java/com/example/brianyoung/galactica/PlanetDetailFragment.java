@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import static com.example.brianyoung.galactica.PlanetHomeFragment.ARG_PLANET_NAME;
+import static com.example.brianyoung.galactica.PlanetHomeFragment.ARG_PLANET_NAME_FRAGMENT;
 
 public class PlanetDetailFragment extends Fragment {
     public static final String ARG_PLANET_NAME_DETAIL = "Setting what planet we are clicking";
@@ -29,8 +29,8 @@ public class PlanetDetailFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         //get arguments from activity
-        if(getArguments().containsKey(ARG_PLANET_NAME)){
-            planet = Planet.getPlanet(getArguments().getString(ARG_PLANET_NAME));
+        if(getArguments().containsKey(ARG_PLANET_NAME_FRAGMENT)){
+            planet = Planet.getPlanet(getArguments().getString(ARG_PLANET_NAME_FRAGMENT));
             this.getActivity().setTitle(planet.getName());
 
         }

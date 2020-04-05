@@ -1,6 +1,5 @@
 package com.example.brianyoung.galactica;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Planet {

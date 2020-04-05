@@ -15,38 +15,13 @@ import android.widget.TextView;
 
 public class PlanetHomeFragment extends Fragment {
 
-    public static final String ARG_PLANET_NAME = "Setting what planet we are clicking";
+    public static final String ARG_PLANET_NAME_FRAGMENT = "Setting what planet we are clicking";
 
     // TODO: Rename and change types of parameters
     private Planet planet;
-    private Button btnShowVideo, btnMoreInfo;
+    private Button btnShowVideo;
     private ImageView clickableImage;
     private TextView planetName;
-    private boolean mTwoPane;
-    private View.OnClickListener moreInfoListener = new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
-        Planet planet = (Planet) view.getTag();
-        if(mTwoPane) {
-            //Intent code to go to PlanetDetailFragment
-            FragmentManager fragmentManager = getFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            PlanetDetailFragment detailFragment = new PlanetDetailFragment();
-
-            //Using Bundle to send data
-            Bundle bundle = new Bundle();
-            bundle.putString(PlanetHomeFragment.ARG_PLANET_NAME, planet.getName());
-            detailFragment.setArguments(bundle);
-            fragmentTransaction.replace(R.id.detail_container, detailFragment);
-            fragmentTransaction.commit();
-        } else {
-            Context context = view.getContext();
-            Intent intent = new Intent(context, PlanetDetailContainer.class);
-            intent.putExtra(PlanetHomeFragment.ARG_PLANET_NAME, planet.getName());
-            context.startActivity(intent);
-            }
-        }
-    };
 
     public PlanetHomeFragment() {
 
@@ -56,9 +31,9 @@ public class PlanetHomeFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //get arguments from activity
-        if(getArguments().containsKey(ARG_PLANET_NAME)){
-            planet = Planet.getPlanet(getArguments().getString(ARG_PLANET_NAME));
+    //receiving the bundle arguments from the activity this fragment is associated with (in this case it is associated with PlanetHomeEntry)
+    if(getArguments().containsKey(ARG_PLANET_NAME_FRAGMENT)){
+            planet = Planet.getPlanet(getArguments().getString(ARG_PLANET_NAME_FRAGMENT));
             this.getActivity().setTitle(planet.getName());
         }
     }
@@ -78,10 +53,6 @@ public class PlanetHomeFragment extends Fragment {
         int picture = getResources().getIdentifier("pic_" + planet.getPicture(),"drawable","com.example.brianyoung.galactica");
         clickableImage.setImageResource(picture);
 
-        //set the more info button
-        btnMoreInfo = v.findViewById(R.id.btnMoreInfo);
-        btnMoreInfo.setTag(planet);
-        btnMoreInfo.setOnClickListener(moreInfoListener);
 
         //set the show video button
         btnShowVideo = v.findViewById(R.id.btnShowVideo);
