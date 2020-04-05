@@ -29,13 +29,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view, int position) {
                 Planet planet = Planet.getPlanets().get(position);
-//
-//                Bundle bundle = new Bundle();
-//                bundle.putString(PlanetHomeFragment.ARG_PLANET_NAME, planet.getName());
-
-//                Intent intent = new Intent(MainActivity.this, PlanetHomeEntry.class);
-//                intent.putExtras(bundle);
-//                startActivity(intent);
 
                 //make intent that would pass in name to planethomeentry
                 Intent intent = new Intent(MainActivity.this, PlanetHomeEntry.class);

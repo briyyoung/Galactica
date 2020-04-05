@@ -45,16 +45,6 @@ public class PlanetHomeEntry extends AppCompatActivity {
             launchPlanetHome(planetName);
         }
 
-//        if (savedInstanceState == null) {
-//            Bundle arguments = new Bundle();
-//            arguments.putString(PlanetHomeFragment.ARG_PLANET_NAME, getIntent().getStringExtra(PlanetHomeFragment.ARG_PLANET_NAME));
-//            PlanetHomeFragment fragment = new PlanetHomeFragment();
-//            fragment.setArguments(arguments);
-//            getSupportFragmentManager().beginTransaction()
-//                    .add(R.id.home_container, fragment)
-//                    .commit();
-//        }
-
     }
 
     public void launchPlanetHome(String planetname){
