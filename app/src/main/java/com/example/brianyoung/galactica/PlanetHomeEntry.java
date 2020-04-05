@@ -61,6 +61,7 @@ public class PlanetHomeEntry extends AppCompatActivity {
         Intent intent = new Intent(this, PlanetHomeActivity.class);
         intent.putExtra(PlanetHomeActivity.ARG_PLANET_NAME, planetname);
         startActivity(intent);
+        finish();
     }
 
 }
