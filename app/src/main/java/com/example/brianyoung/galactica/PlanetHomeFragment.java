@@ -19,7 +19,7 @@ public class PlanetHomeFragment extends Fragment {
 
     // TODO: Rename and change types of parameters
     private Planet planet;
-    private Button btnShowVideo;
+    private Button btnAPI;
     private ImageView clickableImage;
     private TextView planetName;
 
@@ -54,13 +54,13 @@ public class PlanetHomeFragment extends Fragment {
         clickableImage.setImageResource(picture);
 
 
-        //set the show video button
-        btnShowVideo = v.findViewById(R.id.btnShowVideo);
-        btnShowVideo.setOnClickListener(new View.OnClickListener() {
+        //set the API button
+        btnAPI = v.findViewById(R.id.btnShowVideo);
+        btnAPI.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-                //Intent code to go to PlanetVideoFragment
+                //Intent code to go to PlanetAPIFragment
 
 
             }

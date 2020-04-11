@@ -11,7 +11,7 @@ import android.widget.TextView;
 public class PlanetHomeActivity extends AppCompatActivity {
     public static final String ARG_PLANET_NAME = " ";
     private Planet planet;
-    private Button btnShowVideo, btnMoreInfo;
+    private Button btnAPI, btnMoreInfo;
     private ImageView clickableImage;
     private TextView planetName;
 
@@ -43,12 +43,12 @@ public class PlanetHomeActivity extends AppCompatActivity {
         });
 
 
-        //**set the show video button
-        btnShowVideo = findViewById(R.id.btnShowVideo);
-        btnShowVideo.setOnClickListener(new View.OnClickListener() {
+        //**set the API button
+        btnAPI = findViewById(R.id.btnShowVideo);
+        btnAPI.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(View view) {
+            public void onClick(View view) { launchPlanetAPIActivity(planet.getName());
 
             }
         });
@@ -59,6 +59,12 @@ public class PlanetHomeActivity extends AppCompatActivity {
     public void launchDetailActivity(String planetName){ //Will launch detail class
         Intent intent = new Intent(this, PlanetDetail.class);
         intent.putExtra(PlanetDetail.ARG_PLANET_DETAIL_NAME, planetName);
+        startActivity(intent);
+    }
+
+    public void launchPlanetAPIActivity(String planetName){
+        Intent intent = new Intent(this, PlanetAPIActivity.class);
+        intent.putExtra(PlanetAPIActivity.ARG_API_ACTIVITY, planetName);
         startActivity(intent);
     }
 }

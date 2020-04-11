@@ -7,4 +7,7 @@
     <string name="btnMoreInfo">More</string>
     <string name="btnBack">Back</string>
     <string name="btnShowVideo">Show video!</string>
+    <string name="BodyName">Name</string>
+    <string name="BodyMoon">Number of moons</string>
+    <string name="BodyDate">Discovery Date</string>
 </resources>
