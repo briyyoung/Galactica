@@ -33,9 +33,9 @@
         android:padding="10dp"
         android:text="@string/btnShowVideo"
         android:textSize="16sp"
+        android:textColor="#faf4ff"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:textColor="@android:color/white" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/planetName"
@@ -43,9 +43,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="40dp"
-        android:fontFamily="sans-serif-black"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="casual"
         android:textSize="36sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/clickableImage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -58,6 +59,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:text="TextView"
+        android:fontFamily="@font/amaranth"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/clickableImage" />
