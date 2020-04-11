@@ -7,4 +7,5 @@
     <string name="btnMoreInfo">More</string>
     <string name="btnBack">Back</string>
     <string name="btnShowVideo">Show video!</string>
+    <string name="chooseplanet">Pick a planet to learn!</string>
 </resources>

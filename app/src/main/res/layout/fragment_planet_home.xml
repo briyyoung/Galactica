@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FCFCFD"
+    android:background="#f3c623"
     tools:context=".PlanetHomeFragment">
 
 
@@ -26,14 +26,15 @@
         android:id="@+id/btnShowVideo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"
+        android:background="#10375c"
         android:fontFamily="sans-serif-black"
+        android:padding="10dp"
         android:text="@string/btnShowVideo"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:backgroundTint="@android:color/holo_blue_dark"
         tools:textColor="@android:color/white" />
 
     <TextView
