@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FCFCFD"
+    android:background="#f3c623"
     tools:context=".PlanetHomeFragment">
 
 
@@ -24,30 +24,31 @@
 
     <Button
         android:id="@+id/btnMoreInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="68dp"
+        android:layout_height="37dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
+        android:background="#30475E"
         android:fontFamily="sans-serif-black"
-        android:textSize="16sp"
         android:text="@string/btnMoreInfo"
         android:textColor="@android:color/white"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:backgroundTint="@android:color/holo_blue_dark" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/btnShowVideo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_width="112dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="#30475E"
         android:fontFamily="sans-serif-black"
         android:text="@string/btnShowVideo"
-        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:backgroundTint="@android:color/holo_blue_dark"
         tools:textColor="@android:color/white" />
 
     <TextView
@@ -57,8 +58,9 @@
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="20dp"
-        android:fontFamily="sans-serif-black"
+        android:fontFamily="casual"
         android:textSize="36sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/clickableImage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
