@@ -43,15 +43,15 @@ public class PlanetHomeActivity extends AppCompatActivity {
         });
 
 
-        //**set the API button
-        btnAPI = findViewById(R.id.btnShowVideo);
-        btnAPI.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) { launchPlanetAPIActivity(planet.getName());
-
-            }
-        });
+//        //**set the API button
+//        btnAPI = findViewById(R.id.btnShowVideo);
+//        btnAPI.setOnClickListener(new View.OnClickListener() {
+//
+//            @Override
+//            public void onClick(View view) { launchPlanetAPIActivity(planet.getName());
+//
+//            }
+//        });
 
 
     }
@@ -62,9 +62,9 @@ public class PlanetHomeActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void launchPlanetAPIActivity(String planetName){
-        Intent intent = new Intent(this, PlanetAPIActivity.class);
-        intent.putExtra(PlanetAPIActivity.ARG_API_ACTIVITY, planetName);
-        startActivity(intent);
-    }
+//    public void launchPlanetAPIActivity(String planetName){
+//        Intent intent = new Intent(this, PlanetAPIActivity.class);
+//        intent.putExtra(PlanetAPIActivity.ARG_API_ACTIVITY, planetName);
+//        startActivity(intent);
+//    }
 }

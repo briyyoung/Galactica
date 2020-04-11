@@ -16,7 +16,6 @@
         <activity android:name=".PlanetHomeEntry" />
         <activity android:name=".PlanetHomeActivity" />
         <activity android:name=".MainActivityAdapter" />
-        <activity android:name=".PlanetAPIActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
