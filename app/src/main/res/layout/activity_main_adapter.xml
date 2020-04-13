@@ -16,12 +16,11 @@
 
         <ImageView
             android:id="@+id/planetPicList"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:elevation="0dp"
             android:foregroundGravity="center"
             android:src="@mipmap/ic_launcher_round"
@@ -31,13 +30,12 @@
             android:id="@+id/planetNameList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/planetPicList"
+            android:layout_centerInParent="true"
             android:layout_marginTop="4dp"
             android:fontFamily="casual"
-            android:textSize="14sp"
-            android:textStyle="bold"
             android:textColor="#faf4ff"
-            android:layout_below="@+id/planetPicList"
-            android:layout_centerInParent="true"/>
+            android:textSize="18sp" />
     </RelativeLayout>
 
 </android.support.v7.widget.CardView>
