@@ -53,19 +53,6 @@ public class PlanetHomeFragment extends Fragment {
         int picture = getResources().getIdentifier("pic_" + planet.getPicture(),"drawable","com.example.brianyoung.galactica");
         clickableImage.setImageResource(picture);
 
-
-        //set the API button
-        btnAPI = v.findViewById(R.id.btnShowVideo);
-        btnAPI.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                //Intent code to go to PlanetAPIFragment
-
-
-            }
-        });
-
         return v;
     }
 }

@@ -13,7 +13,7 @@ public class PlanetHomeActivity extends AppCompatActivity {
     private Planet planet;
     private Button btnAPI, btnMoreInfo;
     private ImageView clickableImage;
-    private TextView planetName;
+    private TextView planetName, briefDesc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +26,10 @@ public class PlanetHomeActivity extends AppCompatActivity {
         //set the planet's name
         planetName = findViewById(R.id.planetName);
         planetName.setText(planet.getName());
+
+        //set the planet's description
+        briefDesc = findViewById(R.id.briefDesc);
+        briefDesc.setText(planet.getDescription());
 
         //set the planet's picture
         clickableImage = findViewById(R.id.clickableImage);

@@ -8,4 +8,19 @@
     <string name="btnBack">Back</string>
     <string name="btnShowVideo">Show video!</string>
     <string name="chooseplanet">Pick a planet to learn!</string>
+    <string name="txtview1">Density</string>
+    <string name="txtView2" />
+    <string name="txtView">"Volume "</string>
+    <string name="gravity">Gravity</string>
+    <string name="txt">Mean radius;</string>
+    <string name="radius">Mean radius:</string>
+    <string name="gravityy">Gravity:</string>
+    <string name="density">Density:</string>
+    <string name="dimension">Dimension:</string>
+    <string name="disc">Discovered by:</string>
+    <string name="inc">Inclination:</string>
+    <string name="ecc">Eccentricity:</string>
+    <string name="discdate">Discovery date:</string>
+    <string name="eq">Equaradius:</string>
+
 </resources>

@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#323232")));
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000839")));
 
         //setting the recycler view for the restaurants list
         mainActivityView = findViewById(R.id.mainActivityView);
