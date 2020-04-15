@@ -21,7 +21,7 @@ public class PlanetHomeFragment extends Fragment {
     private Planet planet;
     private Button btnAPI;
     private ImageView clickableImage;
-    private TextView planetName;
+    private TextView planetName, briefDesc;
 
 
     public PlanetHomeFragment() {
@@ -55,6 +55,10 @@ public class PlanetHomeFragment extends Fragment {
         clickableImage = v.findViewById(R.id.clickableImage);
         int picture = getResources().getIdentifier("pic_" + planet.getPicture(),"drawable","com.example.brianyoung.galactica");
         clickableImage.setImageResource(picture);
+
+        //set the planet's description
+        briefDesc = v.findViewById(R.id.briefDesc);
+        briefDesc.setText(planet.getDescription());
 
         return v;
     }
