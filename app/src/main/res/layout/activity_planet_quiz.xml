@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlanetQuiz">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="25dp"
+        android:text="Score:"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/scoreValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/planetQuestion"
+        android:layout_width="331dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="40dp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/choice1"
+        android:layout_width="282dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="100dp"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/planetQuestion" />
+
+    <Button
+        android:id="@+id/choice2"
+        android:layout_width="282dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="30dp"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/choice1"
+        app:layout_constraintTop_toBottomOf="@+id/choice1" />
+
+    <Button
+        android:id="@+id/choice3"
+        android:layout_width="284dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="30dp"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/choice2"
+        app:layout_constraintTop_toBottomOf="@+id/choice2" />
+</android.support.constraint.ConstraintLayout>

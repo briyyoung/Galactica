@@ -1,5 +1,6 @@
 package com.example.brianyoung.galactica;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -134,11 +135,17 @@ public class PlanetDetailFragment extends Fragment {
                 @Override
                 public void onClick(View view) {
                     //Intent code to go to quiz fragment
-
+                    launchPlanetQuiz(planet.getName());
 
                 }
             });
         }
 
+    }
+
+    public void launchPlanetQuiz(String planetName){
+        Intent intent = new Intent(PlanetDetailFragment.this.getActivity(),PlanetQuiz.class);
+        intent.putExtra(PlanetQuiz.ARG_PLANET_QUIZ, planetName);
+        startActivity(intent);
     }
 }
