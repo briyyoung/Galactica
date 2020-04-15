@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 
 import java.util.ArrayList;
 
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     ActionBar actionBar;
+    Button buttonShare;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +28,21 @@ public class MainActivity extends AppCompatActivity {
 
         actionBar = getSupportActionBar();
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000839")));
+
+        //button for sharing function
+        buttonShare = findViewById(R.id.btnShare);
+        buttonShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                shareIntent.setType("text/plain");
+                String shareSub = "Hey, Check This Galactica App!";
+                String shareBody = "This Galactica App will help you Learn about Planets in the Solar System";
+                shareIntent.putExtra(Intent.EXTRA_TEXT,shareBody);
+                shareIntent.putExtra(Intent.EXTRA_SUBJECT,shareSub);
+                startActivity(Intent.createChooser(shareIntent, "Share Using"));
+            }
+        });
 
         //setting the recycler view for the restaurants list
         mainActivityView = findViewById(R.id.mainActivityView);

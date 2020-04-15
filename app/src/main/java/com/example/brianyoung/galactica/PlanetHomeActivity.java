@@ -1,6 +1,7 @@
 package com.example.brianyoung.galactica;
 
 import android.content.Intent;
+import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +15,7 @@ public class PlanetHomeActivity extends AppCompatActivity {
     private Button btnAPI, btnMoreInfo;
     private ImageView clickableImage;
     private TextView planetName, briefDesc;
+    private Button shareButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,19 @@ public class PlanetHomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 launchDetailActivity(planet.getName());
+            }
+        });
+
+        //set the share button
+        shareButton = findViewById(R.id.btnShares);
+        shareButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                shareIntent.setType("text/plain");
+                shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Hi This is Planet " + planet.getName() +" ,I learn this using Galatica App");
+                shareIntent.putExtra(Intent.EXTRA_TEXT, ""+planet.getDescription());
+                startActivity(Intent.createChooser(shareIntent, "Share to "));
             }
         });
 

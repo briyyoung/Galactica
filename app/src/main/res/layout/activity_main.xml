@@ -28,5 +28,17 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true" />
 
+    <Button
+        android:id="@+id/btnShare"
+        android:layout_width="49dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="1dp"
+        android:drawableLeft="@drawable/ic_share_black_24dp"
+        android:fontFamily="@font/amaranth"
+        android:backgroundTint="#10375c"
+        />
+
+
 
 </RelativeLayout>

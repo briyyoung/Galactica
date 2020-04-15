@@ -23,6 +23,7 @@ public class PlanetHomeFragment extends Fragment {
     private ImageView clickableImage;
     private TextView planetName;
 
+
     public PlanetHomeFragment() {
 
     }
@@ -37,6 +38,8 @@ public class PlanetHomeFragment extends Fragment {
             this.getActivity().setTitle(planet.getName());
         }
     }
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -55,4 +58,10 @@ public class PlanetHomeFragment extends Fragment {
 
         return v;
     }
+
+
+
+
+
+
 }
