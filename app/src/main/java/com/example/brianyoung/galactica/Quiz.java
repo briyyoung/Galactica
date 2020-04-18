@@ -11,6 +11,14 @@ public class Quiz {
             { "What is the orbit time for Venus?", "What is Venus’s atmosphere made of?", "What is the rotation direction of Venus?"}
     };
 
+    public String correctAnswers[][] = {
+            //Mercury's correct answers
+            {"88 earth days","4878 km","450 Celsius"},
+            //Venus's correct answers
+            {"225 earth days","Sulfuric acids","East to West"}
+
+    };
+
     public String[][] choiceOne = {
             //Mercury's choice 1 for all questions
             {"88 earth days", "4878 km", "450 Celsius"},
@@ -88,13 +96,7 @@ public class Quiz {
 //        "225 earth days","Sulfuric acids","East to West"
 //    };
 //
-    public String correctAnswers[][] = {
-            //Mercury's correct answers
-            {"88 earth days","4878 km","450 Celsius"},
-            //Venus's correct answers
-            {"225 earth days","Sulfuric acids","East to West"}
 
-    };
 
     public String[][] getQuestions() {
         return Questions;

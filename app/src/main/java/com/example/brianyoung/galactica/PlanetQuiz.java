@@ -33,7 +33,6 @@ public class PlanetQuiz extends AppCompatActivity {
         //Using the picture number as the planet's number
         planetNumber = planet.getPicture();
 
-        Random r = new Random();
         scoreValue = findViewById(R.id.scoreValue);
         planetQuestion = findViewById(R.id.planetQuestion);
         choiceOne = findViewById(R.id.choice1);
@@ -44,39 +43,37 @@ public class PlanetQuiz extends AppCompatActivity {
         scoreValue.setText(String.valueOf(mScore));
 
         //Invoke the nextQuestion method when the screen is created so that we can fill in everything
-        final int[] i = {0};
-        while (i[0] < 11) {
-            nextQuestion(i[0]);
+        Random r = new Random();
+        nextQuestion(r.nextInt(3));
 
             //Set the button listener
             choiceOne.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if (choiceOne.getText().equals(mAnswer)) {
+                    if (choiceOne.getText().equals(mAnswer) && mScore <= 2) {
                         mScore++;
                         scoreValue.setText(Integer.toString(mScore));
-                        //code to proceed to the next question
-                        i[0]++;
-                        //i should be 0 + 1 by now (at the first iteration)
-                        nextQuestion(i[0]);
+                        nextQuestion(r.nextInt(3));
+                        System.out.println("It's correct!");
                     } else {
-                        choiceOne.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+                        System.out.println("You click the wrong answer");
+                        finishQuiz();
                     }
                 }
             });
 
+
             choiceTwo.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if (choiceOne.getText().equals(mAnswer)) {
+                    if (choiceTwo.getText().equals(mAnswer) && mScore <= 2) {
                         mScore++;
                         scoreValue.setText(Integer.toString(mScore));
-                        //code to proceed to the next question
-                        i[0]++;
-                        //i should be 0 + 1 by now (at the first iteration)
-                        nextQuestion(i[0]);
+                        nextQuestion(r.nextInt(3));
+                        System.out.println("It's correct!");
                     } else {
-                        choiceTwo.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+                        System.out.println("You click the wrong answer");
+                        finishQuiz();
                     }
                 }
             });
@@ -84,19 +81,18 @@ public class PlanetQuiz extends AppCompatActivity {
             choiceThree.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if (choiceOne.getText().equals(mAnswer)) {
+                    if (choiceThree.getText().equals(mAnswer) && mScore <= 2) {
                         mScore++;
                         scoreValue.setText(Integer.toString(mScore));
-                        //code to proceed to the next question
-                        i[0]++;
-                        //i should be 0 + 1 by now (at the first iteration)
-                        nextQuestion(i[0]);
+                        nextQuestion(r.nextInt(3));
+                        System.out.println("It's correct!");
                     } else {
-                        choiceThree.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+                        System.out.println("You click the wrong answer");
+                        finishQuiz();
                     }
                 }
             });
-        }
+
     }
 
     //Method to move to the next question
@@ -107,22 +103,21 @@ public class PlanetQuiz extends AppCompatActivity {
 
         //Set the questions according to the planet's number
         String[][] questions = mQuiz.getQuestions();
-        planetQuestion.setText(questions[planetNumber][a]);
+        planetQuestion.setText(questions[number][a]);
 
         //Set the right answers
         String[][] correctAnswer = mQuiz.getCorrectAnswers();
-        mAnswer = correctAnswer[planetNumber][a];
+        mAnswer = correctAnswer[number][a];
 
         //Set the options
         String[][] optionOne = mQuiz.getChoiceOne();
-        choiceOne.setText(optionOne[planetNumber][a]);
+        choiceOne.setText(optionOne[number][a]);
 
         String[][] optionTwo = mQuiz.getChoiceTwo();
-        choiceTwo.setText(optionTwo[planetNumber][a]);
+        choiceTwo.setText(optionTwo[number][a]);
 
         String[][] optionThree = mQuiz.getChoiceThree();
-        choiceThree.setText(optionThree[planetNumber][a]);
-
+        choiceThree.setText(optionThree[number][a]);
     }
 
     private void finishQuiz() {
@@ -142,14 +137,22 @@ public class PlanetQuiz extends AppCompatActivity {
                         finish();
                     }
                 })
-                .setNeutralButton("Share", new DialogInterface.OnClickListener() {
+                .setNeutralButton("Share Result", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         //put a share option here, not sure if it will work tho
+                        String finalResult = "Hey! I got " + String.valueOf(mScore) + " for my " + planet.getName() +" quiz!" ;
+                        Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+                        sharingIntent.setType("text/plain");
+                        sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Subject Here");
+                        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, finalResult);
+                        startActivity(Intent.createChooser(sharingIntent, "Share text via"));
                     }
                 });
 
         AlertDialog alertDialog = dialog.create();
         alertDialog.show();
     }
+
+
 }

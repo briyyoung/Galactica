@@ -260,5 +260,57 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView5" />
 
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/amaranth"
+        android:text="@string/densityUnit"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/density"
+        app:layout_constraintTop_toTopOf="@+id/density" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/amaranth"
+        android:text="@string/gravityUnit"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/gravity"
+        app:layout_constraintTop_toTopOf="@+id/gravity" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/amaranth"
+        android:text="@string/kiloUnit"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/equaradius"
+        app:layout_constraintTop_toTopOf="@+id/equaradius" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/amaranth"
+        android:text="@string/kiloUnit"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/meanRadius"
+        app:layout_constraintTop_toTopOf="@+id/meanRadius" />
+
 
 </android.support.constraint.ConstraintLayout>

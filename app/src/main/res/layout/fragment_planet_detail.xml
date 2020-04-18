@@ -8,6 +8,19 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/amaranth"
+        android:text="@string/kiloUnit"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/meanRadius"
+        app:layout_constraintTop_toTopOf="@+id/meanRadius" />
+
+    <TextView
         android:id="@+id/dimension"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -276,6 +289,45 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.989" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/amaranth"
+        android:text="@string/densityUnit"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/density"
+        app:layout_constraintTop_toTopOf="@+id/density" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/amaranth"
+        android:text="@string/gravityUnit"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/gravity"
+        app:layout_constraintTop_toTopOf="@+id/gravity" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/amaranth"
+        android:text="@string/kiloUnit"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/equaradius"
+        app:layout_constraintTop_toTopOf="@+id/equaradius" />
 
 
 </android.support.constraint.ConstraintLayout>

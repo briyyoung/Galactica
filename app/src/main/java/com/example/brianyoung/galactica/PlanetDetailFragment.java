@@ -4,6 +4,13 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.Html;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import android.text.style.RelativeSizeSpan;
+import android.text.style.SuperscriptSpan;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,7 +42,8 @@ public class PlanetDetailFragment extends Fragment {
     private ImageView planetImageDetail;
     private TextView planetNameDetail;
     private TextView density, gravity, meanRadius, equaradius, dimension, eccentricity, discoveredBy, discoveryDate;
-
+    private SpannableStringBuilder spannableStringBuilder;
+    private String unit;
     public PlanetDetailFragment() {
     }
 
@@ -148,4 +156,5 @@ public class PlanetDetailFragment extends Fragment {
         intent.putExtra(PlanetQuiz.ARG_PLANET_QUIZ, planetName);
         startActivity(intent);
     }
+
 }

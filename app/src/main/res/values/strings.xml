@@ -22,5 +22,8 @@
     <string name="ecc">Eccentricity:</string>
     <string name="discdate">Discovery date:</string>
     <string name="eq">Equaradius:</string>
+    <string name="densityUnit">g.cm <sup><small> 3 </small></sup></string>
+    <string name="gravityUnit">ms <sup><small> -2 </small></sup></string>
+    <string name="kiloUnit">km</string>
 
 </resources>
