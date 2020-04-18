@@ -127,14 +127,32 @@ public class PlanetDetailFragment extends Fragment {
             meanRadius.setText(solarSystem.getMeanRadius() + ""); //meanRadius
             equaradius = v.findViewById(R.id.equaradius);
             equaradius.setText(solarSystem.getEquaRadius() + ""); //equaradius
+
+
             dimension = v.findViewById(R.id.dimension);
-            dimension.setText(solarSystem.getDimension() + ""); //dimension
+            if(solarSystem.getDimension().trim().length() > 0) {
+                dimension.setText(solarSystem.getDimension()); //dimension
+            } else {
+                dimension.setText("N/A");
+            }
+
             eccentricity = v.findViewById(R.id.eccentricity);
             eccentricity.setText(solarSystem.getEccentricity() + ""); //eccentricity
+
             discoveredBy = v.findViewById(R.id.discoveredBy);
-            discoveredBy.setText(solarSystem.getDiscoveredBy()); //discoveredBy
+            if(solarSystem.getDiscoveredBy().trim().length() > 0) {
+                discoveredBy.setText(solarSystem.getDiscoveredBy()); //discoveredBy
+            } else {
+                discoveredBy.setText("N/A");
+            }
+
             discoveryDate = v.findViewById(R.id.discoveryDate);
-            discoveryDate.setText(solarSystem.getDiscoveryDate()); //discoveryDate
+            if(solarSystem.getDiscoveryDate().trim().length() > 0) {
+                discoveryDate.setText(solarSystem.getDiscoveryDate()); //discoveryDate
+            } else {
+                discoveryDate.setText("N/A");
+            }
+
 
             //set the quiz button
             btnQuizPlanet = v.findViewById(R.id.btnQuizPlanet);
