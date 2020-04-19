@@ -48,7 +48,7 @@
 
     <TextView
         android:id="@+id/discoveredBy"
-        android:layout_width="wrap_content"
+        android:layout_width="208dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="27dp"
         android:layout_marginTop="50dp"
@@ -171,8 +171,8 @@
 
     <ImageView
         android:id="@+id/planetImageDetail"
-        android:layout_width="145dp"
-        android:layout_height="145dp"
+        android:layout_width="137dp"
+        android:layout_height="137dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
 

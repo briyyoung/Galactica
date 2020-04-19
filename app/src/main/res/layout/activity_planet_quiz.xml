@@ -4,65 +4,89 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#faf4ff"
     tools:context=".PlanetQuiz">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/amaranth"
         android:text="Score:"
-        android:textSize="18sp"
+        android:textColor="#844685"
+        android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/choice3" />
 
     <TextView
         android:id="@+id/scoreValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:textSize="18sp"
+        android:fontFamily="@font/amaranth"
+        android:textColor="#844685"
+        android:textSize="30sp"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="@+id/textView" />
 
     <TextView
         android:id="@+id/planetQuestion"
-        android:layout_width="331dp"
+        android:layout_width="330dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="40dp"
-        android:textSize="20sp"
+        android:fontFamily="casual"
+        android:textAlignment="center"
+        android:textColor="#844685"
+        android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/choice1"
-        android:layout_width="282dp"
+        android:layout_width="330dp"
         android:layout_height="50dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="90dp"
+        android:background="#844685"
+        android:fontFamily="@font/amaranth"
+        android:textColor="#faf4ff"
         android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/planetQuestion" />
 
     <Button
         android:id="@+id/choice2"
-        android:layout_width="282dp"
-        android:layout_height="53dp"
+        android:layout_width="330dp"
+        android:layout_height="50dp"
         android:layout_marginTop="30dp"
+        android:background="#844685"
+        android:fontFamily="@font/amaranth"
+        android:textColor="#faf4ff"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/choice1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/choice1" />
 
     <Button
         android:id="@+id/choice3"
-        android:layout_width="284dp"
-        android:layout_height="43dp"
+        android:layout_width="330dp"
+        android:layout_height="50dp"
         android:layout_marginTop="30dp"
+        android:background="#844685"
+        android:fontFamily="@font/amaranth"
+        android:textColor="#faf4ff"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/choice2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/choice2" />
+
 </android.support.constraint.ConstraintLayout>
