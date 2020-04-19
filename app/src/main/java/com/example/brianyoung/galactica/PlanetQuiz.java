@@ -126,14 +126,14 @@ public class PlanetQuiz extends AppCompatActivity {
         AlertDialog.Builder dialog = new AlertDialog.Builder(PlanetQuiz.this);
         dialog.setMessage("Congratulations! You finish the test! Your total score is " + mScore + " points.")
                 .setCancelable(false)
-                .setPositiveButton("Retry", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Exit", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         finish();
                     }
                 })
-                .setNegativeButton("Exit", new DialogInterface.OnClickListener() {
+                .setNegativeButton("Retry", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         finish();
