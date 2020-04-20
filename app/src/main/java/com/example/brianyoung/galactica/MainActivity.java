@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         };
 
         //add feedback button to direct to feedback page
-        btnFeedback = findViewById(R.id.btnAboutPage);
+        btnFeedback = findViewById(R.id.btnFdb);
         btnFeedback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
