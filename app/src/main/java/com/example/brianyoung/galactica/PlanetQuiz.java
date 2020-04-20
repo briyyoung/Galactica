@@ -126,14 +126,14 @@ public class PlanetQuiz extends AppCompatActivity {
         AlertDialog.Builder dialog = new AlertDialog.Builder(PlanetQuiz.this);
         dialog.setMessage("Congratulations! You finish the test! Your total score is " + mScore + " points.")
                 .setCancelable(false)
-                .setPositiveButton("Retry", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Exit", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         finish();
                     }
                 })
-                .setNegativeButton("Exit", new DialogInterface.OnClickListener() {
+                .setNegativeButton("Retry", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         finish();
@@ -142,7 +142,7 @@ public class PlanetQuiz extends AppCompatActivity {
                 .setNeutralButton("Share Result", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        //put a share option here, not sure if it will work tho
+                        //put a share option here
                         String finalResult = "Hey! I got " + String.valueOf(mScore) + " for my " + planet.getName() +" quiz!" ;
                         Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
                         sharingIntent.setType("text/plain");
