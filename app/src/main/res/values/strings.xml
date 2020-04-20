@@ -25,5 +25,7 @@
     <string name="densityUnit">g.cm <sup><small><small> 3 </small></small></sup></string>
     <string name="gravityUnit">ms <sup><small><small> -2 </small></small></sup></string>
     <string name="kiloUnit">km</string>
+    <string name="play">Play</string>
+    <string name="click_to_play_music">Click to play music!</string>
 
 </resources>
