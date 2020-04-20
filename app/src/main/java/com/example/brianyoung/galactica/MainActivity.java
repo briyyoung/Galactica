@@ -12,7 +12,6 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -24,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
     ActionBar actionBar;
     Button buttonShare;
     Button btnMusic;
-    Boolean musicBoolean;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,25 +47,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //button for playing music
-        btnMusic = findViewById(R.id.btnMusic);
-//        btnMusic.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                musicBoolean = true;
-//                if (btnMusic.getText().equals("Click to play music!") && musicBoolean == true){
-//                    player.start();
-//                    btnMusic.setText("Click to stop music!");
-//                    musicBoolean = false;
-//                } else if (btnMusic.getText().equals("Click to stop music!") && musicBoolean == true){
-//                    player.stop();
-//                    btnMusic.setText("Click to play music!");
-//                    musicBoolean = false;
-//                }
-//            }
-//        });
-        //button for playing music
+        //button for playing and stopping music
         final MediaPlayer player = MediaPlayer.create(this, R.raw.phase); //creating mediaplayer
+        btnMusic = findViewById(R.id.btnMusic);
         btnMusic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -104,37 +86,5 @@ public class MainActivity extends AppCompatActivity {
         mainActivityView.setAdapter(mAdapter);
     }
 
-    //set mediaplayer
-//    public void play(View v){
-//        if (player == null){ //because if it's already created, we don't want to create a new one
-//            player = MediaPlayer.create(this, R.raw.phase);
-//            player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-//                @Override
-//                public void onCompletion(MediaPlayer mediaPlayer) {
-//                    btnMusic.setText("Click to play music!");
-//                }
-//            });
-//        }
-//
-//        player.start();
-//    }
-//
-//    //stop music
-//    public void stop(View v){
-//        stopPlayer();
-//    }
-//
-//    //stop mediaplayer
-//    private void stopPlayer(){
-//        if (player != null){
-//            player.release();
-//            player = null;
-//            Toast.makeText(this, "MediaPlayer released", Toast.LENGTH_SHORT).show();
-//        }
-//    }
-////
-//    protected void onStop(){
-//        super.onStop();
-//        stopPlayer();
-//    }
+
 }
