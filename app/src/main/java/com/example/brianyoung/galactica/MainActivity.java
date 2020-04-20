@@ -21,8 +21,8 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     ActionBar actionBar;
-    Button buttonShare;
     Button btnMusic;
+    Button btnFeedback;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,20 +32,7 @@ public class MainActivity extends AppCompatActivity {
         actionBar = getSupportActionBar();
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000839")));
 
-        //button for sharing function
-        buttonShare = findViewById(R.id.btnShare);
-        buttonShare.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent shareIntent = new Intent(Intent.ACTION_SEND);
-                shareIntent.setType("text/plain");
-                String shareSub = "Hey, Check This Galactica App!";
-                String shareBody = "This Galactica App will help you Learn about Planets in the Solar System";
-                shareIntent.putExtra(Intent.EXTRA_TEXT,shareBody);
-                shareIntent.putExtra(Intent.EXTRA_SUBJECT,shareSub);
-                startActivity(Intent.createChooser(shareIntent, "Share Using"));
-            }
-        });
+
 
         //button for playing and stopping music
         final MediaPlayer player = MediaPlayer.create(this, R.raw.phase); //creating mediaplayer
@@ -81,6 +68,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         };
+
+        //add feedback button to direct to feedback page
+        btnFeedback = findViewById(R.id.btnFdb);
+        btnFeedback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, FeedbackActivity.class);
+                startActivity(intent);
+            }
+        });
 
         mAdapter = new MainActivityAdapter(Planet.getPlanets(), listener);
         mainActivityView.setAdapter(mAdapter);
