@@ -59,4 +59,15 @@
         android:textSize="16dp"
         android:textStyle="bold" />
 
+    <Button
+        android:id="@+id/btnFdbFrg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Feedback"
+        android:layout_alignParentBottom="true"
+        android:background="#10375c"
+        android:textColor="#faf4ff"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
 </RelativeLayout>

@@ -13,6 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".PlanetQuiz"></activity>
+        <activity android:name=".FeedbackActivity"/>
         <activity android:name=".PlanetDetail" />
         <activity android:name=".PlanetHomeEntry" />
         <activity android:name=".PlanetHomeActivity" />

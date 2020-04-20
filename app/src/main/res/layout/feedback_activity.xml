@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#10375c">
+
+    <TextView
+        android:id="@+id/tvHeloFdb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hey!"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.094"
+        android:textColor="#faf4ff"/>
+
+    <TextView
+        android:id="@+id/tvDescFDB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:text="Thank You for Enjoying this Application. We hope this application helps you learn more about our Planets in the Solar System. You can leave us a feedback to galacticaadmin@athotmail.com"
+        android:textSize="25sp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHeloFdb"
+        android:textColor="#faf4ff"/>
+
+    <Button
+        android:id="@+id/btnFdbk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:background="#0080FF"
+        android:text="Feedback"
+        android:textColor="#faf4ff"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDescFDB"
+        app:layout_constraintVertical_bias="0.022"
+        />
+
+    <Button
+        android:id="@+id/btnFdbShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:background="#0080FF"
+        android:text="Share"
+        android:textColor="#faf4ff"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDescFDB"
+        app:layout_constraintVertical_bias="0.568" />
+
+</android.support.constraint.ConstraintLayout>
