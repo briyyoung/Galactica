@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager mLayoutManager;
     ActionBar actionBar;
     Button btnMusic;
-    Button btnFeedback;
+    Button btnAboutPage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,9 +69,9 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-        //add feedback button to direct to feedback page
-        btnFeedback = findViewById(R.id.btnFdb);
-        btnFeedback.setOnClickListener(new View.OnClickListener() {
+        //add about us button to direct to about us page
+        btnAboutPage = findViewById(R.id.btnAboutPage);
+        btnAboutPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, FeedbackActivity.class);
