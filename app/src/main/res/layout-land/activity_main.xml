@@ -34,16 +34,7 @@
         android:layout_marginEnd="375dp"
         android:layout_marginBottom="150dp" />
 
-    <Button
-        android:id="@+id/btnShare"
-        android:layout_width="49dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="1dp"
-        android:drawableLeft="@drawable/ic_share_black_24dp"
-        android:fontFamily="@font/amaranth"
-        android:backgroundTint="#10375c"
-        />
+
 
     <Button
         android:id="@+id/btnMusic"
@@ -56,7 +47,7 @@
         android:fontFamily="@font/amaranth"
         android:text="@string/click_to_play_music"
         android:textColor="#10375c"
-        android:textSize="16dp"
+        android:textSize="12dp"
         android:textStyle="bold" />
 
     <Button
@@ -65,8 +56,8 @@
         android:layout_height="wrap_content"
         android:text="Feedback"
         android:layout_alignParentBottom="true"
-        android:background="#10375c"
-        android:textColor="#faf4ff"
+        android:background="@drawable/btn_rounded"
+        android:textColor="#10375c"
         android:textSize="15sp"
         android:textStyle="bold" />
 
