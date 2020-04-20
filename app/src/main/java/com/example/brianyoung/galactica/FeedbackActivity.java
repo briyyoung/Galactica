@@ -27,14 +27,14 @@ public class FeedbackActivity extends AppCompatActivity {
 //                fdbIntent.putExtra(Intent.EXTRA_TEXT, "");
 //                startActivity(Intent.createChooser(fdbIntent, "Share to "));
                 Intent intent=new Intent(Intent.ACTION_SEND);
-                String[] recipients={"mailto@gmail.com"};
+                String[] recipients={"feedback@galactica.com"};
                 intent.putExtra(Intent.EXTRA_EMAIL, recipients);
-                intent.putExtra(Intent.EXTRA_SUBJECT,"Subject text here...");
-                intent.putExtra(Intent.EXTRA_TEXT,"Body of the content here...");
-                intent.putExtra(Intent.EXTRA_CC,"mailcc@gmail.com");
+                intent.putExtra(Intent.EXTRA_SUBJECT,"Feedback for Galactica");
+                intent.putExtra(Intent.EXTRA_TEXT," ");
+                intent.putExtra(Intent.EXTRA_CC,"feedback@galactica.com");
                 intent.setType("text/html");
                 intent.setPackage("com.google.android.gm");
-                startActivity(Intent.createChooser(intent, "Send mail"));
+                startActivity(Intent.createChooser(intent, "Send Feedback "));
             }
         });
 
