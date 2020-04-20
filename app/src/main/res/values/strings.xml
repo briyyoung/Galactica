@@ -27,5 +27,8 @@
     <string name="kiloUnit">km</string>
     <string name="play">Play</string>
     <string name="click_to_play_music">Click to play music!</string>
+    <string name="about_us">About us</string>
+    <string name="we_would_love_to_hear_your_feedback">We would love to hear your feedback!</string>
+    <string name="feedback_galactica_com">feedback@galactica.com</string>
 
 </resources>

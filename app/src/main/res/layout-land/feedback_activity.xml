@@ -1,78 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#10375c"
-    tools:context=".FeedbackActivity">
+    android:background="#10375c">
 
-    <android.support.constraint.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/tvHeloFdb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hi there!"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        android:fontFamily="casual"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.094"
+        android:textColor="#faf4ff"/>
 
-        <TextView
-            android:id="@+id/tvHeloFdb"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hey!"
-            android:textSize="40sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.094"
-            android:textColor="#faf4ff"/>
+    <TextView
+        android:id="@+id/tvDescFDB"
+        android:layout_width="630dp"
+        android:layout_height="121dp"
+        android:layout_marginTop="68dp"
+        android:fontFamily="casual"
+        android:text="Thank you for using our app. We hope this application deepens your knowledge and understanding of the different planets in our solar system."
+        android:textAlignment="center"
+        android:textColor="#faf4ff"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHeloFdb" />
 
-        <TextView
-            android:id="@+id/tvDescFDB"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="68dp"
-            android:text="Thank You for Enjoying this Application. We hope this application helps you learn more about our Planets in the Solar System. You can leave us a feedback to galacticaadmin@athotmail.com"
-            android:textSize="25sp"
-            android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvHeloFdb"
-            android:textColor="#faf4ff"/>
+    <Button
+        android:id="@+id/btnFdbk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="584dp"
+        android:layout_marginTop="92dp"
+        android:background="@drawable/btn_rounded"
+        android:fontFamily="@font/amaranth"
+        android:text="Feedback"
+        android:textColor="#10375c"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
-        <Button
-            android:id="@+id/btnFdbk"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="44dp"
-            android:text="Feedback"
-            android:background="@drawable/btn_rounded"
-            android:fontFamily="@font/amaranth"
-            android:textColor="#10375c"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvDescFDB"
-            app:layout_constraintVertical_bias="0.022"
-            />
+    <Button
+        android:id="@+id/btnFdbShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:background="@drawable/btn_rounded"
+        android:fontFamily="@font/amaranth"
+        android:text="Share"
+        android:textColor="#10375c"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDescFDB"
+        app:layout_constraintVertical_bias="0.726" />
 
-        <Button
-            android:id="@+id/btnFdbShare"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="44dp"
-            android:text="Share"
-            android:background="@drawable/btn_rounded"
-            android:fontFamily="@font/amaranth"
-            android:textColor="#10375c"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvDescFDB"
-            app:layout_constraintVertical_bias="0.568" />
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="439dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="420dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="casual"
+        android:text="@string/we_would_love_to_hear_your_feedback"
+        android:textColor="#faf4ff"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDescFDB" />
 
-    </android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="496dp"
+        android:fontFamily="casual"
+        android:text="@string/feedback_galactica_com"
+        android:textColor="#f3c623"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>
