@@ -1,37 +1,38 @@
 package com.example.brianyoung.galactica;
 
-import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
 
 @Entity
 public class NotesEntity {
     @PrimaryKey
-    @NonNull
-    @SerializedName("Planet name")
-    @Expose
-    private String planetName;
-    private String notes;
+    public int id;
+    public String notesContent;
 
-
-    @NonNull
-    public String getPlanetName() {
-        return planetName;
+    public NotesEntity(int id, String notesContent) {
+        this.id = id;
+        this.notesContent = notesContent;
     }
 
-    public void setPlanetName(@NonNull String planetName) {
-        this.planetName = planetName;
+    public int getId() {
+        return id;
     }
 
-    public String getNotes() {
-        return notes;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setNotes(String notes) {
-        this.notes = notes;
+    public String getNotesContent() {
+        return notesContent;
     }
+
+    public void setNotesContent(String notesContent) {
+        this.notesContent = notesContent;
+    }
+
+
+
+
+
 }
 

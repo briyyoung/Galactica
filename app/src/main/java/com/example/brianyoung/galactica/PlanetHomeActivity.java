@@ -1,18 +1,18 @@
 package com.example.brianyoung.galactica;
 
 import android.content.Intent;
-
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 public class PlanetHomeActivity extends AppCompatActivity {
     public static final String ARG_PLANET_NAME = " ";
     private Planet planet;
-    private Button btnAPI, btnMoreInfo;
+    private Button btnNotes, btnMoreInfo;
     private ImageView clickableImage;
     private TextView planetName, briefDesc;
 
@@ -48,11 +48,25 @@ public class PlanetHomeActivity extends AppCompatActivity {
             }
         });
 
+        //set the notes button
+        btnNotes = findViewById(R.id.btnShares);
+        btnNotes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                launchNotes();
+            }
+        });
+
     }
 
     public void launchDetailActivity(String planetName){ //Will launch detail class
         Intent intent = new Intent(this, PlanetDetail.class);
         intent.putExtra(PlanetDetail.ARG_PLANET_DETAIL_NAME, planetName);
+        startActivity(intent);
+    }
+
+    public void launchNotes(){
+        Intent intent = new Intent(this, Notes.class);
         startActivity(intent);
     }
 

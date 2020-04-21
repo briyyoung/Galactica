@@ -5,18 +5,16 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
-import java.util.List;
-
 @Dao
 public interface NotesDao {
     @Query("SELECT * FROM NotesEntity")
-    List<NotesEntity> getNotes();
+    NotesEntity getNotes();
 
     @Insert
-    void insert(NotesEntity notes);
+    void insert(NotesEntity... notes);
 
     @Update
-    void update(NotesEntity repos);
+    void update(NotesEntity... notes);
 
     @Delete
     void delete(NotesEntity...notes);
