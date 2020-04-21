@@ -20,12 +20,6 @@ public class FeedbackActivity extends AppCompatActivity {
         buttonFdbk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent fdbIntent = new Intent(Intent.ACTION_SEND);
-//                fdbIntent.setType("text/plain");
-//                fdbIntent.putExtra(Intent.EXTRA_EMAIL, new String[] { "some@email.address" });
-//                fdbIntent.putExtra(Intent.EXTRA_SUBJECT, "Feedback for Galactica");
-//                fdbIntent.putExtra(Intent.EXTRA_TEXT, "");
-//                startActivity(Intent.createChooser(fdbIntent, "Share to "));
                 Intent intent=new Intent(Intent.ACTION_SEND);
                 String[] recipients={"feedback@galactica.com"};
                 intent.putExtra(Intent.EXTRA_EMAIL, recipients);

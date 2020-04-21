@@ -15,7 +15,7 @@ public class PlanetHomeActivity extends AppCompatActivity {
     private Button btnAPI, btnMoreInfo;
     private ImageView clickableImage;
     private TextView planetName, briefDesc;
-    private Button shareButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,31 +48,6 @@ public class PlanetHomeActivity extends AppCompatActivity {
             }
         });
 
-        //set the share button
-        shareButton = findViewById(R.id.btnShares);
-        shareButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent shareIntent = new Intent(Intent.ACTION_SEND);
-                shareIntent.setType("text/plain");
-                shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Hi This is Planet " + planet.getName() +" ,I learn this using Galatica App");
-                shareIntent.putExtra(Intent.EXTRA_TEXT, ""+planet.getDescription());
-                startActivity(Intent.createChooser(shareIntent, "Share to "));
-            }
-        });
-
-
-//        //**set the API button
-//        btnAPI = findViewById(R.id.btnShowVideo);
-//        btnAPI.setOnClickListener(new View.OnClickListener() {
-//
-//            @Override
-//            public void onClick(View view) { launchPlanetAPIActivity(planet.getName());
-//
-//            }
-//        });
-
-
     }
 
     public void launchDetailActivity(String planetName){ //Will launch detail class
@@ -81,9 +56,4 @@ public class PlanetHomeActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-//    public void launchPlanetAPIActivity(String planetName){
-//        Intent intent = new Intent(this, PlanetAPIActivity.class);
-//        intent.putExtra(PlanetAPIActivity.ARG_API_ACTIVITY, planetName);
-//        startActivity(intent);
-//    }
 }

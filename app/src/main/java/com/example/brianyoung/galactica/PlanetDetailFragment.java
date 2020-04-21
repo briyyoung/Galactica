@@ -44,6 +44,7 @@ public class PlanetDetailFragment extends Fragment {
     private TextView density, gravity, meanRadius, equaradius, dimension, eccentricity, discoveredBy, discoveryDate;
     private SpannableStringBuilder spannableStringBuilder;
     private String unit;
+    private Button shareButton;
     public PlanetDetailFragment() {
     }
 
@@ -60,7 +61,7 @@ public class PlanetDetailFragment extends Fragment {
         }
     }
 
-    //Implenting API calls using ASYNC task
+    //Implementing API calls using ASYNC task
     private class GetSolarSystemTask extends AsyncTask<Void, Void, SolarSystem> {
         
         @Override
@@ -128,6 +129,18 @@ public class PlanetDetailFragment extends Fragment {
             equaradius = v.findViewById(R.id.equaradius);
             equaradius.setText(solarSystem.getEquaRadius() + ""); //equaradius
 
+            //set the share button
+            shareButton = v.findViewById(R.id.btnSharing);
+            shareButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                    shareIntent.setType("text/plain");
+                    shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Hi This is Planet " + planet.getName() +" ,I learn this using Galatica App");
+                    shareIntent.putExtra(Intent.EXTRA_TEXT, ""+planet.getDescription());
+                    startActivity(Intent.createChooser(shareIntent, "Share to "));
+                }
+            });
 
             dimension = v.findViewById(R.id.dimension);
             if(solarSystem.getDimension().trim().length() > 0) {
