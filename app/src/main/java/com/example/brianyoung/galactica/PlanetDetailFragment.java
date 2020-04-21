@@ -3,14 +3,9 @@ package com.example.brianyoung.galactica;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.text.Html;
-import android.text.Spannable;
-import android.text.SpannableString;
+import androidx.fragment.app.Fragment;
+
 import android.text.SpannableStringBuilder;
-import android.text.Spanned;
-import android.text.style.RelativeSizeSpan;
-import android.text.style.SuperscriptSpan;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
