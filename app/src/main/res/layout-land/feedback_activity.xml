@@ -11,21 +11,21 @@
         android:id="@+id/tvHeloFdb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="casual"
         android:text="Hi there!"
+        android:textColor="#faf4ff"
         android:textSize="60sp"
         android:textStyle="bold"
-        android:fontFamily="casual"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.094"
-        android:textColor="#faf4ff"/>
+        app:layout_constraintVertical_bias="0.162" />
 
     <TextView
         android:id="@+id/tvDescFDB"
-        android:layout_width="601dp"
-        android:layout_height="98dp"
+        android:layout_width="545dp"
+        android:layout_height="160dp"
         android:fontFamily="casual"
         android:text="Thank you for using our app. We hope this application deepens your knowledge and understanding of the different planets in our solar system."
         android:textAlignment="center"
@@ -33,46 +33,47 @@
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvHeloFdb"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.116" />
 
     <Button
         android:id="@+id/btnFdbk"
-        android:layout_width="wrap_content"
+        android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:background="@drawable/btn_rounded"
         android:fontFamily="@font/amaranth"
-        android:text="Feedback"
+        android:text="@string/feedback"
         android:textColor="#10375c"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.961" />
+        app:layout_constraintVertical_bias="0.8" />
 
     <Button
         android:id="@+id/btnFdbShare"
-        android:layout_width="wrap_content"
+        android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:background="@drawable/btn_rounded"
         android:fontFamily="@font/amaranth"
-        android:text="Share"
+        android:text="@string/share"
         android:textColor="#10375c"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvDescFDB"
-        app:layout_constraintVertical_bias="0.423" />
+        app:layout_constraintVertical_bias="0.708" />
 
     <TextView
         android:id="@+id/textView18"
         android:layout_width="439dp"
-        android:layout_height="43dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:fontFamily="casual"
         android:text="@string/we_would_love_to_hear_your_feedback"
@@ -86,8 +87,8 @@
 
     <TextView
         android:id="@+id/textView19"
-        android:layout_width="254dp"
-        android:layout_height="29dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:fontFamily="casual"
         android:text="@string/feedback_galactica_com"
         android:textColor="#f3c623"
@@ -95,9 +96,8 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.685" />
+        app:layout_constraintVertical_bias="0.659" />
 
 </android.support.constraint.ConstraintLayout>

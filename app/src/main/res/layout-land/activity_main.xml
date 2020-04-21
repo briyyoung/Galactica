@@ -7,15 +7,16 @@
     android:background="#10375c"
     tools:context=".MainActivity">
 
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="541dp"
-        android:layout_height="82dp"
+        android:layout_height="wrap_content"
         android:layout_above="@+id/mainActivityView"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="320dp"
         android:layout_marginEnd="301dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="27dp"
         android:fontFamily="casual"
         android:text="@string/chooseplanet"
         android:textAlignment="center"
@@ -27,14 +28,11 @@
         android:id="@+id/mainActivityView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
         android:layout_marginStart="395dp"
         android:layout_marginEnd="375dp"
-        android:layout_marginBottom="150dp" />
-
-
+        android:layout_marginBottom="174dp" />
 
     <Button
         android:id="@+id/btnMusic"
@@ -42,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/mainActivityView"
         android:layout_centerInParent="true"
-        android:layout_marginBottom="-80dp"
+        android:layout_marginBottom="-90dp"
         android:background="@drawable/btn_rounded"
         android:fontFamily="@font/amaranth"
         android:text="@string/click_to_play_music"
@@ -53,13 +51,11 @@
     <Button
         android:id="@+id/btnAboutPage"
         android:layout_width="wrap_content"
-        android:layout_height="10dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
+        android:layout_height="40dp"
         android:layout_below="@+id/btnMusic"
-        android:layout_marginBottom="-28dp"
-        android:layout_marginEnd="854dp"
-        android:layout_marginTop="88dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="105dp"
+        android:layout_marginEnd="599dp"
         android:background="@android:color/transparent"
         android:fontFamily="@font/amaranth"
         android:text="@string/about_us"
