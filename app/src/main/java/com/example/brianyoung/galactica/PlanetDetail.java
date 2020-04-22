@@ -1,7 +1,8 @@
 package com.example.brianyoung.galactica;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 //The Detail class will simply be a class that holds the container to DetailFragment. Hence, this class's function is only to direct the user to the detailfragment class
 public class PlanetDetail extends AppCompatActivity {

@@ -2,9 +2,6 @@ package com.example.brianyoung.galactica;
 
 import android.app.Dialog;
 import android.content.Intent;
-
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,11 +11,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 public class PlanetHomeActivity extends AppCompatActivity {
     public static final String ARG_PLANET_NAME = " ";
     private static final String TAG = "";
     private Planet planet;
-    private Button btnAPI, btnMoreInfo;
+    private Button btnNotes, btnMoreInfo;
     private ImageView clickableImage;
     private TextView planetName, briefDesc;
 
@@ -43,13 +42,6 @@ public class PlanetHomeActivity extends AppCompatActivity {
         clickableImage = findViewById(R.id.clickableImage);
         int picture = getResources().getIdentifier("pic_" + planet.getPicture(),"drawable","com.example.brianyoung.galactica");
         clickableImage.setImageResource(picture);
-        clickableImage.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                customDialog();
-            }
-        });
 
         //set the more info button
         btnMoreInfo = findViewById(R.id.btnMoreInfo);
@@ -61,11 +53,33 @@ public class PlanetHomeActivity extends AppCompatActivity {
             }
         });
 
+        //set the notes button
+        btnNotes = findViewById(R.id.btnShares);
+        btnNotes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                launchNotes();
+            }
+        });
+
+        //set the image click button
+        clickableImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                customDialog();
+            }
+        });
+
     }
 
     public void launchDetailActivity(String planetName){ //Will launch detail class
         Intent intent = new Intent(this, PlanetDetail.class);
         intent.putExtra(PlanetDetail.ARG_PLANET_DETAIL_NAME, planetName);
+        startActivity(intent);
+    }
+
+    public void launchNotes(){
+        Intent intent = new Intent(this, NotesList.class);
         startActivity(intent);
     }
 
@@ -81,4 +95,5 @@ public class PlanetHomeActivity extends AppCompatActivity {
 
         mDialog.show();
     }
+
 }
