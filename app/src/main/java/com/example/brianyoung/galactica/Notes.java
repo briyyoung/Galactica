@@ -11,7 +11,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
 import com.google.android.material.textfield.TextInputLayout;
@@ -36,6 +35,7 @@ public class Notes extends AppCompatActivity {
         editText = findViewById(R.id.editText);
         btnPreviousNotes = findViewById(R.id.btnPreviousNotes);
         planetNameWriteNotes = findViewById(R.id.planetNameWriteNotes);
+        btnShare = findViewById(R.id.btnShare);
 
         //extract argument (planet.getName) from intent from NotesList
         Intent intent = getIntent();
@@ -68,6 +68,14 @@ public class Notes extends AppCompatActivity {
             }
         });
 
+        //share notes button
+        btnShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new ShareUserNotes().execute(intent.getStringExtra(NotesList.MESSAGE));
+            }
+        });
+
     }
 
     private class StoreUserNotes extends AsyncTask<String, Void, Void> {
@@ -77,7 +85,6 @@ public class Notes extends AppCompatActivity {
             String userTypeNotes = String.valueOf(textFieldNotes.getEditText().getText());
 
             //Get notes first
-            //I think ids[0] is the planet name? Test it first
             NotesEntity currentNotes = mDb.getNotesDao().getNotesByPlanetName(ids[0]);
 
             //if statement here to see whether we need to update or insert
@@ -116,6 +123,32 @@ public class Notes extends AppCompatActivity {
                 }
             }
         }
+
+    private class ShareUserNotes extends AsyncTask<String, Void, NotesEntity> {
+        @Override
+        protected NotesEntity doInBackground(String... ids) {
+            //Get saved notes
+            NotesEntity savedNotes = mDb.getNotesDao().getNotesByPlanetName(ids[0]);
+            return savedNotes;
+        }
+
+        @Override
+        protected void onPostExecute(NotesEntity notesEntity) {
+            if(notesEntity != null) {
+                if (notesEntity.getNotesContent().trim().length() > 0) {
+                    Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                    shareIntent.setType("text/plain");
+                    shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Hi This is my notes for Planet " + notesEntity.getPlanetNameID());
+                    shareIntent.putExtra(Intent.EXTRA_TEXT, "" + notesEntity.getNotesContent());
+                    startActivity(Intent.createChooser(shareIntent, "Share to "));
+                } else {
+                    editText.setHint("You don't have any notes yet!");
+                }
+            } else {
+                editText.setHint("You don't have any notes yet!");
+            }
+        }
+    }
     }
 
 
