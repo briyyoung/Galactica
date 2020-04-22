@@ -66,7 +66,7 @@ public class PlanetHomeActivity extends AppCompatActivity {
     }
 
     public void launchNotes(){
-        Intent intent = new Intent(this, Notes.class);
+        Intent intent = new Intent(this, NotesList.class);
         startActivity(intent);
     }
 

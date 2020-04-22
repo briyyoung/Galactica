@@ -1,25 +1,27 @@
 package com.example.brianyoung.galactica;
 
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity
 public class NotesEntity {
     @PrimaryKey
-    public int id;
+    @NonNull
+    public String planetName;
     public String notesContent;
 
-    NotesEntity(int id, String notesContent) {
-        this.id = id;
+    NotesEntity(String planetName, String notesContent) {
+        this.planetName = planetName;
         this.notesContent = notesContent;
     }
 
-    public int getId() {
-        return id;
+    public String getPlanetNameID() {
+        return planetName;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setPlanetNameID(String planetName) {
+        this.planetName = planetName;
     }
 
     public String getNotesContent() {

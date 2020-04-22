@@ -4,14 +4,15 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -32,8 +33,6 @@ public class MainActivity extends AppCompatActivity {
         actionBar = getSupportActionBar();
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000839")));
 
-
-
         //button for playing and stopping music
         final MediaPlayer player = MediaPlayer.create(this, R.raw.phase); //creating mediaplayer
         btnMusic = findViewById(R.id.btnMusic);
@@ -52,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        //setting the recycler view for the restaurants list
+        //setting the recycler view for the planet list
         mainActivityView = findViewById(R.id.mainActivityView);
         mainActivityView.setHasFixedSize(true);
         mLayoutManager = new GridLayoutManager(this, 3);

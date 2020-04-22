@@ -14,6 +14,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Notes"></activity>
         <activity android:name=".PlanetQuiz" />
+        <activity android:name=".NotesList"/>
         <activity android:name=".FeedbackActivity" />
         <activity android:name=".PlanetDetail" />
         <activity android:name=".PlanetHomeEntry" />

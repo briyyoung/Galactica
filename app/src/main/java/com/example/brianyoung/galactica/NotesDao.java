@@ -7,8 +7,9 @@ import androidx.room.Update;
 
 @Dao
 public interface NotesDao {
-    @Query("SELECT * FROM NotesEntity")
-    NotesEntity getNotes();
+    //Select notes based on its planetName
+    @Query("SELECT * FROM NotesEntity WHERE planetName = :planetName")
+    NotesEntity getNotesByPlanetName(String planetName);
 
     @Insert
     void insert(NotesEntity... notes);

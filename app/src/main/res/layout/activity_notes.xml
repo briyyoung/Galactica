@@ -14,7 +14,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:fontFamily="casual"
-        android:text="Notes"
+        android:text="Notes:"
         android:textColor="#f3c623"
         android:textSize="36sp"
         android:textStyle="bold"
@@ -58,5 +58,15 @@
         android:text="Edit notes"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/planetNameWriteNotes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/textView20"
+        app:layout_constraintTop_toTopOf="@+id/textView20" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
