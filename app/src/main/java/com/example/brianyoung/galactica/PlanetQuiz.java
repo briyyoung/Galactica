@@ -3,11 +3,12 @@ package com.example.brianyoung.galactica;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Random;
 
@@ -46,53 +47,47 @@ public class PlanetQuiz extends AppCompatActivity {
         Random r = new Random();
         nextQuestion(r.nextInt(3));
 
-            //Set the button listener
-            choiceOne.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    if (choiceOne.getText().equals(mAnswer) && mScore <= 2) {
-                        mScore++;
-                        scoreValue.setText(Integer.toString(mScore));
-                        nextQuestion(r.nextInt(3));
-                        System.out.println("It's correct!");
-                    } else {
-                        System.out.println("You click the wrong answer");
-                        finishQuiz();
-                    }
+        choiceOne.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (choiceOne.getText().equals(mAnswer) && mScore <= 2) {
+                    mScore++;
+                    scoreValue.setText(Integer.toString(mScore));
+                    nextQuestion(r.nextInt(3));
+                } else {
+                    finishQuiz();
                 }
-            });
+            }
+        });
 
-
-            choiceTwo.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    if (choiceTwo.getText().equals(mAnswer) && mScore <= 2) {
-                        mScore++;
-                        scoreValue.setText(Integer.toString(mScore));
-                        nextQuestion(r.nextInt(3));
-                        System.out.println("It's correct!");
-                    } else {
-                        System.out.println("You click the wrong answer");
-                        finishQuiz();
-                    }
+        choiceTwo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (choiceTwo.getText().equals(mAnswer) && mScore <= 2) {
+                    mScore++;
+                    scoreValue.setText(Integer.toString(mScore));
+                    nextQuestion(r.nextInt(3));
+                } else {
+                    finishQuiz();
                 }
-            });
+            }
+        });
 
-            choiceThree.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    if (choiceThree.getText().equals(mAnswer) && mScore <= 2) {
-                        mScore++;
-                        scoreValue.setText(Integer.toString(mScore));
-                        nextQuestion(r.nextInt(3));
-                        System.out.println("It's correct!");
-                    } else {
-                        System.out.println("You click the wrong answer");
-                        finishQuiz();
-                    }
+
+        choiceThree.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (choiceThree.getText().equals(mAnswer) && mScore <= 2) {
+                    mScore++;
+                    scoreValue.setText(Integer.toString(mScore));
+                    nextQuestion(r.nextInt(3));
+                    System.out.println("It's correct!");
+                } else {
+                    finishQuiz();
                 }
-            });
-
+            }
+        });
     }
 
     //Method to move to the next question
@@ -141,7 +136,7 @@ public class PlanetQuiz extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         //put a share option here
-                        String finalResult = "Hey! I got " + String.valueOf(mScore) + " for my " + planet.getName() +" quiz!" ;
+                        String finalResult = "Hey! I received " + String.valueOf(mScore) + " for my " + planet.getName() +" quiz!" ;
                         Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
                         sharingIntent.setType("text/plain");
                         sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Subject Here");
@@ -153,6 +148,5 @@ public class PlanetQuiz extends AppCompatActivity {
         AlertDialog alertDialog = dialog.create();
         alertDialog.show();
     }
-
 
 }

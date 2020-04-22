@@ -4,34 +4,37 @@ import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
-
 @Entity
 public class NotesEntity {
     @PrimaryKey
     @NonNull
-    @SerializedName("Planet name")
-    @Expose
-    private String planetName;
-    private String notes;
+    public String planetName;
+    public String notesContent;
 
+    NotesEntity(String planetName, String notesContent) {
+        this.planetName = planetName;
+        this.notesContent = notesContent;
+    }
 
-    @NonNull
-    public String getPlanetName() {
+    public String getPlanetNameID() {
         return planetName;
     }
 
-    public void setPlanetName(@NonNull String planetName) {
+    public void setPlanetNameID(String planetName) {
         this.planetName = planetName;
     }
 
-    public String getNotes() {
-        return notes;
+    public String getNotesContent() {
+        return notesContent;
     }
 
-    public void setNotes(String notes) {
-        this.notes = notes;
+    public void setNotesContent(String notesContent) {
+        this.notesContent = notesContent;
     }
+
+
+
+
+
 }
 

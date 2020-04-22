@@ -1,21 +1,16 @@
 package com.example.brianyoung.galactica;
 
-import android.app.Dialog;
 import android.content.Intent;
-import androidx.appcompat.app.AppCompatActivity;
 
-import android.graphics.drawable.ColorDrawable;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class PlanetHomeActivity extends AppCompatActivity {
     public static final String ARG_PLANET_NAME = " ";
-    private static final String TAG = "";
     private Planet planet;
     private Button btnAPI, btnMoreInfo;
     private ImageView clickableImage;
@@ -42,13 +37,6 @@ public class PlanetHomeActivity extends AppCompatActivity {
         clickableImage = findViewById(R.id.clickableImage);
         int picture = getResources().getIdentifier("pic_" + planet.getPicture(),"drawable","com.example.brianyoung.galactica");
         clickableImage.setImageResource(picture);
-        clickableImage.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                customDialog();
-            }
-        });
 
         //set the more info button
         btnMoreInfo = findViewById(R.id.btnMoreInfo);
@@ -66,19 +54,6 @@ public class PlanetHomeActivity extends AppCompatActivity {
         Intent intent = new Intent(this, PlanetDetail.class);
         intent.putExtra(PlanetDetail.ARG_PLANET_DETAIL_NAME, planetName);
         startActivity(intent);
-    }
-
-    public void customDialog(){
-        final Dialog mDialog = new Dialog(this);
-        mDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        mDialog.setContentView(R.layout.popup);
-        mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
-        ImageView image = mDialog.findViewById(R.id.realPic);
-        int popupPic = getResources().getIdentifier("picture_" + planet.getPicture(),"drawable","com.example.brianyoung.galactica");
-        image.setImageResource(popupPic);
-        Log.d(TAG, "customDialog: popupPic received");
-
-        mDialog.show();
     }
 
 }
