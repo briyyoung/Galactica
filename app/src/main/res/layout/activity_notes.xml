@@ -28,10 +28,11 @@
         tools:layout_editor_absoluteY="158dp">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="18dp"
-            android:hint="hint" />
+            android:hint="hint"
+            android:textSize="18dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
