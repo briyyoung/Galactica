@@ -56,6 +56,7 @@
         android:background="#844685"
         android:fontFamily="@font/amaranth"
         android:textColor="#faf4ff"
+        android:textAllCaps="false"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,6 +70,7 @@
         android:background="#844685"
         android:fontFamily="@font/amaranth"
         android:textColor="#faf4ff"
+        android:textAllCaps="false"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -83,6 +85,7 @@
         android:fontFamily="@font/amaranth"
         android:textColor="#faf4ff"
         android:textSize="18sp"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/choice2" />

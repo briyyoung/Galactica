@@ -3,10 +3,12 @@ package com.example.brianyoung.galactica;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,14 +18,13 @@ import com.google.android.material.textfield.TextInputLayout;
 
 public class Notes extends AppCompatActivity {
     //declare adapter variables
-    RecyclerView rvNotes;
-    NotesAdapter notesAdapter;
     NotesDatabase mDb;
     public static final String ARG_NOTES = " ";
     private TextInputLayout textFieldNotes;
     private Button btnSubmit, btnPreviousNotes;
     private EditText editText;
     private TextView planetNameWriteNotes;
+    private Button btnShare;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +52,9 @@ public class Notes extends AppCompatActivity {
                 //insert notes by executing AsyncTask
                 new StoreUserNotes().execute(intent.getStringExtra(NotesList.MESSAGE));
                 System.out.println("AsyncTask works!");
+                Toast toast = Toast.makeText(getApplicationContext(), "Note has been saved", Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
             }
         });
 
@@ -63,7 +67,6 @@ public class Notes extends AppCompatActivity {
                 System.out.println("Previous notes is stored");
             }
         });
-
 
     }
 
@@ -81,9 +84,11 @@ public class Notes extends AppCompatActivity {
             if (currentNotes == null) {
                 mDb.getNotesDao().insert(new NotesEntity(ids[0], userTypeNotes));
                 System.out.println("New notes is inserted!");
+
             } else {
                 mDb.getNotesDao().update(new NotesEntity(ids[0], userTypeNotes));
                 System.out.println("Notes is updated!");
+
             }
             return null;
         }

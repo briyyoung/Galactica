@@ -57,6 +57,7 @@
         android:fontFamily="@font/amaranth"
         android:textColor="#faf4ff"
         android:textSize="18sp"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/planetQuestion" />
@@ -70,6 +71,7 @@
         android:fontFamily="@font/amaranth"
         android:textColor="#faf4ff"
         android:textSize="18sp"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
@@ -84,6 +86,7 @@
         android:fontFamily="@font/amaranth"
         android:textColor="#faf4ff"
         android:textSize="18sp"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"

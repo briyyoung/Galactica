@@ -1,14 +1,21 @@
 package com.example.brianyoung.galactica;
 
+import android.app.Dialog;
+import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
+
+import static androidx.constraintlayout.widget.Constraints.TAG;
 
 public class PlanetHomeFragment extends Fragment {
 
@@ -16,7 +23,7 @@ public class PlanetHomeFragment extends Fragment {
 
     // TODO: Rename and change types of parameters
     private Planet planet;
-    private Button btnAPI;
+    private Button btnNotes;
     private ImageView clickableImage;
     private TextView planetName, briefDesc;
 
@@ -50,17 +57,45 @@ public class PlanetHomeFragment extends Fragment {
         clickableImage = v.findViewById(R.id.clickableImage);
         int picture = getResources().getIdentifier("pic_" + planet.getPicture(),"drawable","com.example.brianyoung.galactica");
         clickableImage.setImageResource(picture);
+        //set the image click button
+        clickableImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                customDialog();
+            }
+        });
 
         //set the planet's description
         briefDesc = v.findViewById(R.id.briefDesc);
         briefDesc.setText(planet.getDescription());
 
+        //set the notes button
+        btnNotes = v.findViewById(R.id.btnNotes);
+        btnNotes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                launchNotes();
+            }
+        });
+
         return v;
     }
 
+    public void launchNotes(){
+        Intent intent = new Intent(getActivity(), NotesList.class);
+        startActivity(intent);
+    }
 
+    public void customDialog(){
+        final Dialog mDialog = new Dialog(getContext());
+        mDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        mDialog.setContentView(R.layout.popup);
+        mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        ImageView image = mDialog.findViewById(R.id.realPic);
+        int popupPic = getResources().getIdentifier("picture_" + planet.getPicture(),"drawable","com.example.brianyoung.galactica");
+        image.setImageResource(popupPic);
+        Log.d(TAG, "customDialog: popupPic received");
 
-
-
-
+        mDialog.show();
+    }
 }

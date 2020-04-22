@@ -42,6 +42,13 @@ public class PlanetHomeActivity extends AppCompatActivity {
         clickableImage = findViewById(R.id.clickableImage);
         int picture = getResources().getIdentifier("pic_" + planet.getPicture(),"drawable","com.example.brianyoung.galactica");
         clickableImage.setImageResource(picture);
+        //set the image click button
+        clickableImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                customDialog();
+            }
+        });
 
         //set the more info button
         btnMoreInfo = findViewById(R.id.btnMoreInfo);
@@ -54,19 +61,11 @@ public class PlanetHomeActivity extends AppCompatActivity {
         });
 
         //set the notes button
-        btnNotes = findViewById(R.id.btnShares);
+        btnNotes = findViewById(R.id.btnNotes);
         btnNotes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 launchNotes();
-            }
-        });
-
-        //set the image click button
-        clickableImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                customDialog();
             }
         });
 

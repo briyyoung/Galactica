@@ -195,8 +195,8 @@
 
     <Button
         android:id="@+id/btnQuizPlanet"
-        android:layout_width="130dp"
-        android:layout_height="70dp"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
         android:layout_marginEnd="70dp"
         android:layout_marginBottom="50dp"
         android:background="#f3c623"

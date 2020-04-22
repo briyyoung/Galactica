@@ -19,8 +19,10 @@
         android:src="@mipmap/ic_launcher"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.41" />
 
     <TextView
         android:id="@+id/planetName"
@@ -28,27 +30,47 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="36dp"
         android:fontFamily="casual"
-        android:textSize="36sp"
+        android:textSize="50dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/clickableImage"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/briefDesc"
-        android:layout_width="344dp"
-        android:layout_height="143dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:text="TextView"
+        android:layout_width="329dp"
+        android:layout_height="186dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="30dp"
         android:fontFamily="@font/amaranth"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/clickableImage" />
 
-
+    <Button
+        android:id="@+id/btnNotes"
+        android:layout_width="70dp"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:background="#10375c"
+        android:fontFamily="@font/amaranth"
+        android:text="Notes"
+        android:textColor="#faf4ff"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.028" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -117,7 +117,7 @@ public class PlanetQuiz extends AppCompatActivity {
 
     private void finishQuiz() {
         AlertDialog.Builder dialog = new AlertDialog.Builder(PlanetQuiz.this);
-        dialog.setMessage("Congratulations! You finish the test! Your total score is " + mScore + " points.")
+        dialog.setMessage("You finished the test! Your total score is " + mScore + " points.")
                 .setCancelable(false)
                 .setPositiveButton("Exit", new DialogInterface.OnClickListener() {
                     @Override
