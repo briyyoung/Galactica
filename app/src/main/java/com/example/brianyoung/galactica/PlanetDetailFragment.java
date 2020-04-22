@@ -37,9 +37,9 @@ public class PlanetDetailFragment extends Fragment {
     private TextView planetNameDetail;
     private TextView density, gravity, meanRadius, equaradius, dimension, eccentricity, discoveredBy, discoveryDate;
     private Button shareButton;
+
     public PlanetDetailFragment() {
     }
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
