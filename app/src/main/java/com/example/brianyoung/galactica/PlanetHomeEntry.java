@@ -1,8 +1,9 @@
 package com.example.brianyoung.galactica;
 
 import android.content.Intent;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class PlanetHomeEntry extends AppCompatActivity {
     public static final String ARG_PLANET_NAME = "";
