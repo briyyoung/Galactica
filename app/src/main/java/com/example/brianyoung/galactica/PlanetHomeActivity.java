@@ -1,8 +1,12 @@
 package com.example.brianyoung.galactica;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -11,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class PlanetHomeActivity extends AppCompatActivity {
     public static final String ARG_PLANET_NAME = " ";
+    private static final String TAG = "";
     private Planet planet;
     private Button btnNotes, btnMoreInfo;
     private ImageView clickableImage;
@@ -57,6 +62,14 @@ public class PlanetHomeActivity extends AppCompatActivity {
             }
         });
 
+        //set the image click button
+        clickableImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                customDialog();
+            }
+        });
+
     }
 
     public void launchDetailActivity(String planetName){ //Will launch detail class
@@ -68,6 +81,19 @@ public class PlanetHomeActivity extends AppCompatActivity {
     public void launchNotes(){
         Intent intent = new Intent(this, NotesList.class);
         startActivity(intent);
+    }
+
+    public void customDialog(){
+        final Dialog mDialog = new Dialog(this);
+        mDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        mDialog.setContentView(R.layout.popup);
+        mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        ImageView image = mDialog.findViewById(R.id.realPic);
+        int popupPic = getResources().getIdentifier("picture_" + planet.getPicture(),"drawable","com.example.brianyoung.galactica");
+        image.setImageResource(popupPic);
+        Log.d(TAG, "customDialog: popupPic received");
+
+        mDialog.show();
     }
 
 }
