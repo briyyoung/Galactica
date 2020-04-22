@@ -9,7 +9,7 @@ public class NotesEntity {
     public int id;
     public String notesContent;
 
-    public NotesEntity(int id, String notesContent) {
+    NotesEntity(int id, String notesContent) {
         this.id = id;
         this.notesContent = notesContent;
     }

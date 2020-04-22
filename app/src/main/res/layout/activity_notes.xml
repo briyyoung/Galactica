@@ -31,11 +31,12 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Input your notes here!"
-            android:textSize="18dp"
-            android:inputType="textMultiLine|textLongMessage"/>
+            android:inputType="textMultiLine|textLongMessage"
+            android:textSize="18dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -45,6 +46,16 @@
         android:layout_marginStart="276dp"
         android:layout_marginBottom="36dp"
         android:text="Submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnPreviousNotes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:layout_marginBottom="39dp"
+        android:text="Edit notes"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

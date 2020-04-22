@@ -3,8 +3,6 @@ package com.example.brianyoung.galactica;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import androidx.fragment.app.Fragment;
-
 import android.text.SpannableStringBuilder;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.fragment.app.Fragment;
 
 import com.example.brianyoung.galactica.Entities.PlanetInterface;
 import com.example.brianyoung.galactica.Entities.SolarSystem;
@@ -89,7 +89,7 @@ public class PlanetDetailFragment extends Fragment {
             Log.d(TAG, "onPostExecute: Solar system API connected");
             updateUi();
             Log.d(TAG, "onPostExecute: UI updated!");
-            PlanetDetailFragment.this.getActivity().setTitle(solarSystem.getEnglishName()); //null??
+            PlanetDetailFragment.this.getActivity().setTitle(solarSystem.getEnglishName());
         }
     }
     @Override
