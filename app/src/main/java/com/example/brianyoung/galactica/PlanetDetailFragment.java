@@ -3,7 +3,6 @@ package com.example.brianyoung.galactica;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.text.SpannableStringBuilder;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,12 +36,10 @@ public class PlanetDetailFragment extends Fragment {
     private ImageView planetImageDetail;
     private TextView planetNameDetail;
     private TextView density, gravity, meanRadius, equaradius, dimension, eccentricity, discoveredBy, discoveryDate;
-    private SpannableStringBuilder spannableStringBuilder;
-    private String unit;
     private Button shareButton;
+
     public PlanetDetailFragment() {
     }
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -124,19 +121,6 @@ public class PlanetDetailFragment extends Fragment {
             equaradius = v.findViewById(R.id.equaradius);
             equaradius.setText(solarSystem.getEquaRadius() + ""); //equaradius
 
-            //set the share button
-            shareButton = v.findViewById(R.id.btnSharing);
-            shareButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent shareIntent = new Intent(Intent.ACTION_SEND);
-                    shareIntent.setType("text/plain");
-                    shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Hi This is Planet " + planet.getName() +" ,I learn this using Galatica App");
-                    shareIntent.putExtra(Intent.EXTRA_TEXT, ""+planet.getDescription());
-                    startActivity(Intent.createChooser(shareIntent, "Share to "));
-                }
-            });
-
             dimension = v.findViewById(R.id.dimension);
             if(solarSystem.getDimension().trim().length() > 0) {
                 dimension.setText(solarSystem.getDimension()); //dimension
@@ -161,6 +145,27 @@ public class PlanetDetailFragment extends Fragment {
                 discoveryDate.setText("N/A");
             }
 
+            //set the share button
+            shareButton = v.findViewById(R.id.btnSharing);
+            shareButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                    shareIntent.setType("text/plain");
+                    shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Hi This is Planet " + planet.getName() +" ,I learn this using Galatica App");
+                    shareIntent.putExtra(Intent.EXTRA_TEXT,
+                            "Planet name: " + solarSystem.getEnglishName()
+                                    + ", Density: "+ solarSystem.getDensity()
+                                    + ", Gravity: " + solarSystem.getGravity()
+                                    +", Mean radius: " + solarSystem.getMeanRadius()
+                                    +", Equaradius: " + solarSystem.getEquaRadius()
+                                    +", Dimension: " + dimension.getText()
+                                    +", Eccentricity: " + solarSystem.getEccentricity()
+                                    +", Discovered by: " + discoveredBy.getText()
+                                    +", Discovery date: " + discoveryDate.getText());
+                    startActivity(Intent.createChooser(shareIntent, "Share to "));
+                }
+            });
 
             //set the quiz button
             btnQuizPlanet = v.findViewById(R.id.btnQuizPlanet);
@@ -170,7 +175,6 @@ public class PlanetDetailFragment extends Fragment {
                 public void onClick(View view) {
                     //Intent code to go to quiz fragment
                     launchPlanetQuiz(planet.getName());
-
                 }
             });
         }
