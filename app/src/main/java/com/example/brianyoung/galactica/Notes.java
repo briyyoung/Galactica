@@ -9,18 +9,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
-
 import com.google.android.material.textfield.TextInputLayout;
 
 public class Notes extends AppCompatActivity {
-    //declare adapter variables
     NotesDatabase mDb;
-    public static final String ARG_NOTES = " ";
     private TextInputLayout textFieldNotes;
-    private Button btnSubmit, btnPreviousNotes;
+    private Button btnSave, btnEditNotes;
     private EditText editText;
     private TextView planetNameWriteNotes;
     private Button btnShare;
@@ -31,22 +27,22 @@ public class Notes extends AppCompatActivity {
         setContentView(R.layout.activity_notes);
 
         textFieldNotes = findViewById(R.id.textFieldNotes);
-        btnSubmit = findViewById(R.id.btnSubmit);
+        btnSave = findViewById(R.id.btnSave);
         editText = findViewById(R.id.editText);
-        btnPreviousNotes = findViewById(R.id.btnPreviousNotes);
+        btnEditNotes = findViewById(R.id.btnEditNotes);
         planetNameWriteNotes = findViewById(R.id.planetNameWriteNotes);
         btnShare = findViewById(R.id.btnShare);
 
-        //extract argument (planet.getName) from intent from NotesList
+        //extract argument (planet.getName) from the intent in NotesList.class
         Intent intent = getIntent();
         String planetName = intent.getStringExtra(NotesList.MESSAGE);
         planetNameWriteNotes.setText(planetName);
 
-        //Create database
+        //create the database
         mDb = Room.databaseBuilder(getApplicationContext(), NotesDatabase.class, "notes-database").build();
 
-        //submit the notes button
-        btnSubmit.setOnClickListener(new View.OnClickListener() {
+        //submit notes button
+        btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //insert notes by executing AsyncTask
@@ -59,7 +55,7 @@ public class Notes extends AppCompatActivity {
         });
 
         //store saved notes button
-        btnPreviousNotes.setOnClickListener(new View.OnClickListener() {
+        btnEditNotes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 new GetUserNotes().execute(intent.getStringExtra(NotesList.MESSAGE));
@@ -84,7 +80,7 @@ public class Notes extends AppCompatActivity {
             //to save notes
             String userTypeNotes = String.valueOf(textFieldNotes.getEditText().getText());
 
-            //Get notes first
+            //get notes first
             NotesEntity currentNotes = mDb.getNotesDao().getNotesByPlanetName(ids[0]);
 
             //if statement here to see whether we need to update or insert
@@ -104,7 +100,7 @@ public class Notes extends AppCompatActivity {
         private class GetUserNotes extends AsyncTask<String, Void, NotesEntity> {
             @Override
             protected NotesEntity doInBackground(String... ids) {
-                //Get saved notes
+                //get saved notes
                 NotesEntity savedNotes = mDb.getNotesDao().getNotesByPlanetName(ids[0]);
                 return savedNotes;
             }
@@ -116,10 +112,14 @@ public class Notes extends AppCompatActivity {
                         editText.setText(notesEntity.getNotesContent());
                         System.out.println("Notes is retrieved!");
                     } else {
-                        editText.setHint("You don't have any saved notes yet!");
+                        Toast toast = Toast.makeText(getApplicationContext(), "You don't have any saved notes yet!", Toast.LENGTH_LONG);
+                        toast.setGravity(Gravity.CENTER, 0, 0);
+                        toast.show();
                     }
                 } else {
-                    editText.setHint("You don't have any saved notes yet!");
+                    Toast toast = Toast.makeText(getApplicationContext(), "You don't have any saved notes yet!", Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    toast.show();
                 }
             }
         }
@@ -127,7 +127,7 @@ public class Notes extends AppCompatActivity {
     private class ShareUserNotes extends AsyncTask<String, Void, NotesEntity> {
         @Override
         protected NotesEntity doInBackground(String... ids) {
-            //Get saved notes
+            //get saved notes
             NotesEntity savedNotes = mDb.getNotesDao().getNotesByPlanetName(ids[0]);
             return savedNotes;
         }

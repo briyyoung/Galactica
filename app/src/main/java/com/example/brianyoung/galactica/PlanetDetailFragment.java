@@ -10,14 +10,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.fragment.app.Fragment;
-
 import com.example.brianyoung.galactica.Entities.PlanetInterface;
 import com.example.brianyoung.galactica.Entities.SolarSystem;
-
 import java.io.IOException;
-
 import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.Retrofit;
@@ -28,8 +24,6 @@ import static com.example.brianyoung.galactica.PlanetHomeFragment.ARG_PLANET_NAM
 public class PlanetDetailFragment extends Fragment {
     public static final String ARG_PLANET_NAME_DETAIL = "Setting what planet we are clicking";
     private static final String TAG = "";
-
-    // TODO: Rename and change types of parameters
     private SolarSystem solarSystem;
     private Planet planet;
     private Button btnQuizPlanet;
@@ -68,7 +62,7 @@ public class PlanetDetailFragment extends Fragment {
                 PlanetInterface planetInterface = retrofit.create(PlanetInterface.class);
                 Call<SolarSystem> solarSystemCall = planetInterface.getPlanetAttributes(planet.getName());
 
-                //execute network request
+                //Execute network request
                 Response<SolarSystem> solarSystemResponse = solarSystemCall.execute();
                 SolarSystem solarSystemAPI = solarSystemResponse.body(); //gets planet object
                 return solarSystemAPI;
@@ -81,7 +75,7 @@ public class PlanetDetailFragment extends Fragment {
 
         @Override
         protected void onPostExecute(SolarSystem solarSystemExecute){
-            //Assign planet
+            //assigning planet
             solarSystem = solarSystemExecute;
             Log.d(TAG, "onPostExecute: Solar system API connected");
             updateUi();
@@ -92,12 +86,13 @@ public class PlanetDetailFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        //inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_planet_detail, container, false);
         updateUi();
         return v;
     }
 
+    //method to update our UI
     private void updateUi(){
         View v = getView();
 
@@ -152,7 +147,7 @@ public class PlanetDetailFragment extends Fragment {
                 public void onClick(View view) {
                     Intent shareIntent = new Intent(Intent.ACTION_SEND);
                     shareIntent.setType("text/plain");
-                    shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Hi This is Planet " + planet.getName() +" ,I learn this using Galatica App");
+                    shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Hi this is planet " + planet.getName() +", I learnt this using the Galactica App");
                     shareIntent.putExtra(Intent.EXTRA_TEXT,
                             "Planet name: " + solarSystem.getEnglishName()
                                     + ", Density: "+ solarSystem.getDensity()

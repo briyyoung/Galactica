@@ -39,8 +39,8 @@ public class FeedbackActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent shareIntent = new Intent(Intent.ACTION_SEND);
                 shareIntent.setType("text/plain");
-                shareIntent.putExtra(Intent.EXTRA_SUBJECT, "This App is AWESOME, IT IS GALACTICA!!!");
-                shareIntent.putExtra(Intent.EXTRA_TEXT, "Check this cool application that will make you learn more about Planets in Solar System");
+                shareIntent.putExtra(Intent.EXTRA_SUBJECT, "This app is AWESOME, it's called Galactica!");
+                shareIntent.putExtra(Intent.EXTRA_TEXT, "Check this cool application that will make you want to learn more about planets in the solar system!");
                 startActivity(Intent.createChooser(shareIntent, "Share to "));
             }
         });

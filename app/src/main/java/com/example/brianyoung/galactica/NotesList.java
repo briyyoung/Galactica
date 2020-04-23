@@ -3,14 +3,12 @@ package com.example.brianyoung.galactica;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class NotesList extends AppCompatActivity {
     public static final String MESSAGE = "This is from NotesList";
-    private static final String TAG = "";
     private RecyclerView notesRecyclerView;
     private RecyclerView.Adapter notesAdapter;
     private RecyclerView.LayoutManager notesLayoutManager;
