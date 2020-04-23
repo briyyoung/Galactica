@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -33,24 +32,6 @@ public class MainActivity extends AppCompatActivity {
         actionBar = getSupportActionBar();
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000839")));
 
-        //button for playing and stopping music
-        final MediaPlayer player = MediaPlayer.create(this, R.raw.phase); //creating mediaplayer
-        btnMusic = findViewById(R.id.btnMusic);
-        btnMusic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(!player.isPlaying()){
-                    player.start();
-                    btnMusic.setText("Click to stop music!");
-                } else {
-                    player.pause();
-                    Log.d(TAG, "onClick: stopPlayer initiated!");
-                    btnMusic.setText("Click to play music!");
-                }
-            }
-        });
-
-
         //setting the recycler view for the planet list
         mainActivityView = findViewById(R.id.mainActivityView);
         mainActivityView.setHasFixedSize(true);
@@ -68,7 +49,27 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-        //add about us button to direct to about us page
+        mAdapter = new MainActivityAdapter(Planet.getPlanets(), listener);
+        mainActivityView.setAdapter(mAdapter);
+
+        //button for playing and stopping music
+        final MediaPlayer player = MediaPlayer.create(this, R.raw.phase); //creating mediaplayer
+        btnMusic = findViewById(R.id.btnMusic);
+        btnMusic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!player.isPlaying()){
+                    player.start();
+                    btnMusic.setText("Click to stop music!");
+                } else {
+                    player.pause();
+                    Log.d(TAG, "onClick: stopPlayer initiated!");
+                    btnMusic.setText("Click to play music!");
+                }
+            }
+        });
+
+        //adding the 'about us' button to direct to the 'about us' page
         btnAboutPage = findViewById(R.id.btnAboutPage);
         btnAboutPage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,9 +79,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        mAdapter = new MainActivityAdapter(Planet.getPlanets(), listener);
-        mainActivityView.setAdapter(mAdapter);
     }
-
 
 }

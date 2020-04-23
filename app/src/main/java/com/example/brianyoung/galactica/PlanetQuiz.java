@@ -7,9 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import java.util.Random;
 
 public class PlanetQuiz extends AppCompatActivity {
@@ -30,7 +28,7 @@ public class PlanetQuiz extends AppCompatActivity {
         Intent intent = getIntent();
         planet = Planet.getPlanet(intent.getStringExtra(ARG_PLANET_QUIZ));
 
-        //Get the planet's number based on the order that we use in the Planet.java
+        //Get the planet's number based on the order that we use in Planet.java
         //Using the picture number as the planet's number
         planetNumber = planet.getPicture();
 
@@ -40,10 +38,10 @@ public class PlanetQuiz extends AppCompatActivity {
         choiceTwo = findViewById(R.id.choice2);
         choiceThree = findViewById(R.id.choice3);
 
-        //Display the score as 0 when the quiz first started
+        //Display the score as 0 when the quiz initially starts
         scoreValue.setText(String.valueOf(mScore));
 
-        //Invoke the nextQuestion method when the screen is created so that we can fill in everything
+        //Invoke the nextQuestion method when the screen is created so that we can fill in everything (question, and the three choices)
         Random r = new Random();
         nextQuestion(r.nextInt(3));
 
@@ -91,7 +89,7 @@ public class PlanetQuiz extends AppCompatActivity {
     }
 
     //Method to move to the next question
-    //a should be the next question's number so between 2-10
+    //'a' should be the next question's number so between 2-10
     private void nextQuestion(int a) {
         //Mercury's number is 1-1 = 0 to get the right questions
         int number = planetNumber - 1;

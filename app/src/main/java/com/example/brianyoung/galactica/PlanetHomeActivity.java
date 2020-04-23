@@ -10,9 +10,9 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
 
+//This activity is only launched in a small screen, for a large screen, we use PlanetHomeFragment
 public class PlanetHomeActivity extends AppCompatActivity {
     public static final String ARG_PLANET_NAME = " ";
     private static final String TAG = "";
@@ -42,7 +42,7 @@ public class PlanetHomeActivity extends AppCompatActivity {
         clickableImage = findViewById(R.id.clickableImage);
         int picture = getResources().getIdentifier("pic_" + planet.getPicture(),"drawable","com.example.brianyoung.galactica");
         clickableImage.setImageResource(picture);
-        //set the image click button
+        //set the clickable image button
         clickableImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

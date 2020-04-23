@@ -12,16 +12,12 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.fragment.app.Fragment;
-
 import static androidx.constraintlayout.widget.Constraints.TAG;
 
 public class PlanetHomeFragment extends Fragment {
 
-    public static final String ARG_PLANET_NAME_FRAGMENT = "Setting what planet we are clicking";
-
-    // TODO: Rename and change types of parameters
+    public static final String ARG_PLANET_NAME_FRAGMENT = " ";
     private Planet planet;
     private Button btnNotes;
     private ImageView clickableImage;

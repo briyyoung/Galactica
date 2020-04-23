@@ -4,7 +4,8 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-//The Detail class will simply be a class that holds the container to DetailFragment. Hence, this class's function is only to direct the user to the detailfragment class
+//The Detail class will simply be a class that holds the container to DetailFragment.
+// //Hence, this class's function is only to direct the user to the DetailFragment class.
 public class PlanetDetail extends AppCompatActivity {
     public static final String ARG_PLANET_DETAIL_NAME = " ";
 

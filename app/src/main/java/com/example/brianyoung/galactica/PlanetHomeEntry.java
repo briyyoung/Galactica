@@ -22,7 +22,7 @@ public class PlanetHomeEntry extends AppCompatActivity {
         Intent intent = getIntent();
         String planetName = intent.getStringExtra(MainActivity.MESSAGE);
 
-        if(mTwoPane){
+        if(mTwoPane){ //If on wide screen, or tablet
             //Activate fragment PlanetHomeFragment
             Bundle argumentsHome = new Bundle();
             argumentsHome.putString(PlanetHomeFragment.ARG_PLANET_NAME_FRAGMENT, planetName);
@@ -41,7 +41,7 @@ public class PlanetHomeEntry extends AppCompatActivity {
                     .replace(R.id.detail_container, detailFragment)
                     .commit();
 
-        } else {
+        } else { //if on small screen, or mobile phone
             //Activate planetHome
             launchPlanetHome(planetName);
         }

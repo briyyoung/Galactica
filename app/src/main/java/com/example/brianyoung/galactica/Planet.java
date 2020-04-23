@@ -33,14 +33,14 @@ public class Planet {
     }
 
 
-    //constructor for planet
+    //planet constructor
     public Planet(String name, int picture, String description){
         this.name = name;
         this.picture = picture;
         this.description = description;
     }
 
-    //create method that would go get you one planet.
+    //method that would get you one planet.
     public static Planet getPlanet(String name){
         for (Planet planet : getPlanets()){
             if(planet.getName().equals(name)){
@@ -72,10 +72,5 @@ public class Planet {
                 "Smaller than Earth's moon, Pluto is known as the \"Dwarf planet\". This planet contains extremely high mountains, and even has red snow."));
         return planets;
     }
-
-
-
-
-
 
 }
