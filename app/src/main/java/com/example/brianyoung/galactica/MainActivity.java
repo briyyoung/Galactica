@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView mainActivityView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    ActionBar actionBar;
     Button btnMusic;
     Button btnAboutPage;
 
@@ -28,9 +27,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000839")));
 
         //setting the recycler view for the planet list
         mainActivityView = findViewById(R.id.mainActivityView);
@@ -53,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         mainActivityView.setAdapter(mAdapter);
 
         //button for playing and stopping music
+        //the music we selected is a Creative Commons licensed music called Phase created by AGST.
         final MediaPlayer player = MediaPlayer.create(this, R.raw.phase); //creating mediaplayer
         btnMusic = findViewById(R.id.btnMusic);
         btnMusic.setOnClickListener(new View.OnClickListener() {
