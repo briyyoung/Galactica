@@ -48,6 +48,7 @@ public class PlanetDetailFragment extends Fragment {
     }
 
     //Implementing API calls using ASYNC task
+    //Here we used a Retrofit library v2.7.1
     private class GetSolarSystemTask extends AsyncTask<Void, Void, SolarSystem> {
         
         @Override
