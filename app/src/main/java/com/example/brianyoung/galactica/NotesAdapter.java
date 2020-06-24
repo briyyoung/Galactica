@@ -10,8 +10,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHolder> {
-    public ArrayList<Planet> notesPlanet;
-    public RecyclerViewClickListener notesListener;
+    private ArrayList<Planet> notesPlanet;
+    private RecyclerViewClickListener notesListener;
+
 
     public NotesAdapter(ArrayList<Planet> planets, RecyclerViewClickListener listener) {
         notesPlanet = planets;
@@ -40,27 +41,28 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
         @Override
         public void onClick(View view) {
             notesListener.onClick(view, getAdapterPosition());
+            }
+        }
+
+        @NonNull
+        @Override
+        public NotesAdapter.NotesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_notes_adapter, parent, false);
+            return new NotesViewHolder(v, notesListener);
+        }
+
+        @Override
+        public void onBindViewHolder(NotesAdapter.NotesViewHolder holder, int position) {
+           Planet planet = notesPlanet.get(position);
+            holder.planetNameNotes.setText(planet.getName());
+
+            int picture = holder.itemView.getContext().getResources().getIdentifier("pic_" + planet.getPicture(),"drawable","com.example.brianyoung.galactica");
+            holder.planetPicNotes.setImageResource(picture);
+
+        }
+
+        @Override
+        public int getItemCount() {
+            return notesPlanet.size();
         }
     }
-
-    @NonNull
-    @Override
-    public NotesAdapter.NotesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_notes_adapter, parent, false);
-        return new NotesViewHolder(v, notesListener);
-    }
-
-    @Override
-    public void onBindViewHolder(NotesAdapter.NotesViewHolder holder, int position) {
-        Planet planet = notesPlanet.get(position);
-        holder.planetNameNotes.setText(planet.getName());
-
-        int picture = holder.itemView.getContext().getResources().getIdentifier("pic_" + planet.getPicture(),"drawable","com.example.brianyoung.galactica");
-        holder.planetPicNotes.setImageResource(picture);
-    }
-
-    @Override
-    public int getItemCount() {
-        return notesPlanet.size();
-    }
-}

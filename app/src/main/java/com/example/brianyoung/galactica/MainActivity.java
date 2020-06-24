@@ -42,7 +42,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view, int position) {
                 Planet planet = Planet.getPlanets().get(position);
 
-                //make intent that would pass in name to planethomeentry
+                //make intent that would pass in na
+                // me to planethomeentry
                 Intent intent = new Intent(MainActivity.this, PlanetHomeEntry.class);
                 intent.putExtra(MESSAGE, planet.getName());
                 startActivity(intent);
